@@ -23,6 +23,7 @@ if __name__ == '__main__':
                 'pylint',
             ],
             'test': [
+                'codecov',
                 'pytest-runner',
                 'pytest-flask',
                 'pytest',
