@@ -12,7 +12,6 @@ if __name__ == '__main__':
     setup(
         name='BajtaHack',
         version='0.0.1',
-        licence='AGPL',
         packages=['web'],
         include_package_data=True,
         install_requires=[
