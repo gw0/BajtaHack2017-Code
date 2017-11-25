@@ -4,6 +4,10 @@
   :target: https://travis-ci.org/psywerx/BajtaHack
   :alt: Traves CI
 
+.. image:: https://codecov.io/gh/Psywerx/BajtaHack/branch/master/graph/badge.svg
+  :target: https://codecov.io/gh/Psywerx/BajtaHack
+  :alt: Codecov
+
 
 This is an example project for Bajtahack heckaton. This app contains a simple
 web server for controlling a SRM module.
