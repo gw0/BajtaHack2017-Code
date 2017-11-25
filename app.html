@@ -3,19 +3,38 @@
 
   <link rel="stylesheet" href="css/bootstrap.css">
 
+  <style media="screen">
+    .lightbulb {
+      width: 40px;
+      height:40px;
+      display:inline-block;
+      border: 3px solid red;
+      background: #F08080;
+    }
+
+    .on {
+      border: 3px solid green;
+      background: #7CFC00;
+    }
+
+    .active {
+      border: 3px dashed red;
+    }
+
+  </style>
 </head>
 <body>
   <h1>Smart house</h1>
   <div class="container-fluid">
 
     <div id="lightbulbs-container">
-      <label class="checkbox-inline">
-        <input id="manual" type="checkbox" disabled> Manual
-      </label>
+      <div id="lightbulb-1" data-id="1">
+          <button data-id="1" data-mode="manual" data-value="true">On</button>
+          <button data-id="1" data-mode="manual" data-value="false">Off</button>
+          <button data-id="1" data-mode="auto" data-value="null">Auto</button>
 
-      <label class="checkbox-inline">
-        <input id="auto" type="checkbox" checked > Auto
-      </label>
+          <span data-id="1" class="lightbulb"></span>
+      </div>
     </div>
   </div>
   <script src="js/jquery-3.2.1.js"></script>
@@ -23,37 +42,88 @@
   <script src="js/bootstrap.js"></script>
 
   <script type="text/javascript">
-    var state = {
-      mode: true,
-      lightStatus: false
-    }
-    $("#auto").on("click", function(event){
-        console.log("auto click", state.mode)
-        state.mode = !state.mode;
-        if (state.mode) {
-            $("#manual").attr("disabled", "true");
-            $.ajax({
-              url: "/mode",
+      $("button").on("click", function(event){
+          var element = $(event.target);
+          var mode = element.attr("data-mode");
+          var value = element.attr("data-value");
+          var id = element.attr("data-id");
+
+          $.ajax({
+              url: "/mode/"+id,
               method: "POST",
               data: {
-                "value": "auto"
+                  "mode": mode,
+                  "value": value
               }
-            });
-        } else {
-          $("#manual").removeAttr("disabled");
+          });
+      });
+
+
+      test_cases = [[{
+        value: true,
+        id: 1,
+        mode: "manual"
+      }],
+      [{
+        value: false,
+        id: 1,
+        mode: "manual"
+      }],
+      [{
+        value: true,
+        id: 1,
+        mode: "auto"
+      }],
+      [{
+        value: false,
+        id: 1,
+        mode: "auto"
+      }],
+    ]
+
+    function render(results) {
+        for (var i=0; i<results.length; i++) {
+            var res = results[i];
+            var {id, value, mode} = res;
+            var lightState = value;
+
+            if (mode === "auto") {
+                value = null;
+            }
+
+            var selector = `[data-id=${id}][data-mode=${mode}][data-value=${value}]`;
+
+            $(selector).addClass("active");
+
+            console.log(id, mode, value);
+
+            if (lightState === true) {
+                $(`[data-id=1] .lightbulb`).addClass("on");
+            } else {
+                $(`[data-id=1] .lightbulb`).removeClass("on");
+            }
         }
-    });
-    $("#manual").on("click", function(event){
-      if(!state.mode){
-        state.lightState = !state.lightState;
+    }
+
+    function refresh() {
+        $(".active").removeClass();
+
+        // var results = test_cases[[Math.floor(Math.random() * 4)]];
+
         $.ajax({
-          url: "/mode",
-          method: "POST",
-          data: {
-            "value": state.lightState  ? "on" : "off"
-          }
+            url: "/status",
+            method: "GET"
+        }).done(function(results){
+            console.log("success", results);
+            render(results);
+            window.setTimeout(refresh, 1000);
+        }).fail(function(error){
+            console.error("error",  error);
         });
-      }
+    };
+
+    $(document).ready(function(){
+        refresh();
     });
   </script>
 
