@@ -1,7 +1,7 @@
 # conftest.py
 import pytest
 
-from bajtahack import create_app
+from web import create_app
 
 
 @pytest.fixture

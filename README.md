@@ -17,7 +17,8 @@ Usage
 
 .. code:: python
 
-    todo
+    export FLASK_APP=web
+    flask run
 
 For development
 ---------------

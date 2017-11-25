@@ -1,6 +1,6 @@
 from flask import Flask
 
-from bajtahack import views
+from web import views
 
 
 def create_app():
