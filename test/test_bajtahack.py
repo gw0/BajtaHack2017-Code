@@ -1,5 +1,4 @@
-# test_app.py
-import pytest
+"""Tests for base web init."""
 from flask import url_for
 
 
