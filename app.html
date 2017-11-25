@@ -1,0 +1,61 @@
+<html>
+<head>
+
+  <link rel="stylesheet" href="css/bootstrap.css">
+
+</head>
+<body>
+  <h1>Smart house</h1>
+  <div class="container-fluid">
+
+    <div id="lightbulbs-container">
+      <label class="checkbox-inline">
+        <input id="manual" type="checkbox" disabled> Manual
+      </label>
+
+      <label class="checkbox-inline">
+        <input id="auto" type="checkbox" checked > Auto
+      </label>
+    </div>
+  </div>
+  <script src="js/jquery-3.2.1.js"></script>
+  <script src="js/popper.js"></script>
+  <script src="js/bootstrap.js"></script>
+
+  <script type="text/javascript">
+    var state = {
+      mode: true,
+      lightStatus: false
+    }
+    $("#auto").on("click", function(event){
+        console.log("auto click", state.mode)
+        state.mode = !state.mode;
+        if (state.mode) {
+            $("#manual").attr("disabled", "true");
+            $.ajax({
+              url: "/mode",
+              method: "POST",
+              data: {
+                "value": "auto"
+              }
+            });
+        } else {
+          $("#manual").removeAttr("disabled");
+        }
+    });
+    $("#manual").on("click", function(event){
+      if(!state.mode){
+        state.lightState = !state.lightState;
+        $.ajax({
+          url: "/mode",
+          method: "POST",
+          data: {
+            "value": state.lightState  ? "on" : "off"
+          }
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>
