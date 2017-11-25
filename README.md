@@ -1,3 +1,10 @@
+**BajtaHack hackathon demo project**
+
+.. image:: https://travis-ci.org/psywerx/BajtaHack.svg?branch=master
+  :target: https://travis-ci.org/psywerx/BajtaHack
+  :alt: Traves CI
+
+
 This is an example project for Bajtahack heckaton. This app contains a simple
 web server for controlling a SRM module.
 
