@@ -1,7 +1,7 @@
 **BajtaHack hackathon demo project**
 
-.. image:: https://travis-ci.org/psywerx/BajtaHack.svg?branch=master
-  :target: https://travis-ci.org/psywerx/BajtaHack
+.. image:: https://travis-ci.org/Psywerx/BajtaHack.svg?branch=master
+  :target: https://travis-ci.org/Psywerx/BajtaHack
   :alt: Traves CI
 
 .. image:: https://codecov.io/gh/Psywerx/BajtaHack/branch/master/graph/badge.svg
