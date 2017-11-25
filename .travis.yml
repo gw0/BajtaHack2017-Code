@@ -10,7 +10,7 @@ install:
 
 script: 
     - python setup.py test
-    - pylint simple_wbd tests
+    - pylint web test
 
 after_success:
     - codecov
