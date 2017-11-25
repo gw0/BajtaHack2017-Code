@@ -24,7 +24,7 @@ if __name__ == '__main__':
             ],
             'test': [
                 'codecov',
-                'coverage',
+                'pytest-cov',
                 'pytest-runner',
                 'pytest-flask',
                 'pytest',
