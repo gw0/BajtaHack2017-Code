@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+ 
+{% block container %}
+<div class="row" style="margin-bottom: 2em;">
+	<h2>My profile</h2>
+</div>
+<div class="row">
+	<div class="col-sm-2">
+		<img style="border-radius:50%" src="{{ url_for('static', filename = 'blaz_artac.jpg') }}" />
+	</div>
+	<div class="col-sm-2">
+		<p>{{user[1]}}</p><br>
+		<p>{{user[2]}}</p><br>
+		<p>{{user[3]}}</p>
+	</div>
+</div>
+{% endblock %}

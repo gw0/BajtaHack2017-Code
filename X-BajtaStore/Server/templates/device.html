@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+ 
+{% block container %}
+<div class="row">
+	<h2>{{device[1]}}</h2>
+</div>
+<div class="row">
+			<p>Status: 
+				{% if(device[2] == 1) %} 
+					active 
+				{% else %} 
+					inactive
+				 {% endif %}
+			</p>
+</div>
+<div class="row">
+{% for data in device_data %}
+	<p>{{data[1]}}</p>
+{% endfor %}
+</div>
+<script type="text/javascript">
+setTimeout(function(){
+   window.location.reload(1);
+}, 5000);
+	
+</script>
+{% endblock %}

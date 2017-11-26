@@ -1,0 +1,18 @@
+PRAGMA foreign_keys = ON;
+
+CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT, email TEXT, telephone TEXT);
+
+CREATE TABLE apps (id INTEGER PRIMARY KEY, name TEXT, description TEXT, author TEXT);
+
+CREATE TABLE users_apps (id INTEGER PRIMARY KEY, user_id INTEGER, app_id INTEGER, FOREIGN KEY (user_id) REFERENCES users(id),  FOREIGN KEY (app_id) REFERENCES apps(id));
+
+CREATE TABLE devices (id INTEGER PRIMARY KEY, name TEXT, status BOOLEAN, user_id INTEGER, app_id INTEGER, FOREIGN KEY (user_id) REFERENCES users(id), FOREIGN KEY (app_id) REFERENCES apps(id));
+
+CREATE TABLE device_data (id INTEGER PRIMARY KEY, data BLOB, device_id INTEGER, FOREIGN KEY (device_id) REFERENCES devices(id));
+
+INSERT INTO users VALUES (1, "Blaz Artac", "artac.blaz@gmail.com", "+38631578083");
+INSERT INTO apps VALUES (1, "smart home manager");
+INSERT INTO users_apps VALUES (1,1,1); 
+INSERT INTO devices VALUES (1, "kitchen", 1, 1, 1);
+INSERT INTO devices VALUES (2, "living room", 0, 1, 1);
+INSERT INTO devices VALUES (3, "bathroom", 1, 1, 1);

@@ -1,0 +1,19 @@
+footer {
+	width:100%;
+	position: absolute;
+	bottom: 0;
+	text-align: center;
+	background-color: #99afe8;
+}
+
+nav {
+	background-color: #99afe8;
+}
+
+.device {
+	padding: 1.3em;
+	background: lightblue;
+	border-radius: 1em;
+	margin: 1em 1em 1em 0;
+	max-width: 31%;
+}
