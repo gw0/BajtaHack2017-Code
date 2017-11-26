@@ -16,3 +16,6 @@ dist
 # generated egg folders
 BajtaHack.egg-info
 .eggs
+
+#env
+bajtahack_env

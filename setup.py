@@ -16,6 +16,7 @@ if __name__ == '__main__':
         include_package_data=True,
         install_requires=[
             'flask',
+            'requests==2.13.0',
         ],
         extras_require={
             'dev': [
