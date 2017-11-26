@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BajtaStore</title>
+    <link href="{{ url_for('static', filename='css/bootstrap.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="{{ url_for('home')}}">BajtaStore</a>
+        </div>
+        <div>
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="{{ url_for('home')}}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('devices', user_id=1)}}">My devices</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('apps', user_id=1)}}">My apps</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('store')}}">Store</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('user_profile', user_id=1)}}">My profile</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      {% block container %}{% endblock %}
+    </div>
+    <footer>
+      Brought to you by the <strong>X team</strong>.
+    </footer>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>
+  </body>
+</html>

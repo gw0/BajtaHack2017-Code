@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+ 
+{% block container %}
+  <div class="row">
+	 <h2>My applications</h2>
+  </div>
+  <div class="row">
+  	{% for app in apps %}
+		<div class="col-sm-4 device">
+			<h3>{{app[1]}}</h3>
+		</div>
+	{% endfor %}
+  </div>
+{% endblock %}

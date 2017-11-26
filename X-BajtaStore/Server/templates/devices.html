@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+ 
+{% block container %}
+<div class="row">
+	<h2>My devices</h2>
+</div>
+<div class="row">
+	<p>Configure your devices and connect them with applications. Refresh the page to list new devices.</p>
+</div>
+<div class="row">
+	{% for device in devices %}
+		<div class="col-sm-4 device">
+			<h3><a href="{{ url_for('device', user_id=device[3], device_id=device[0])}}">{{device[1] }}</a></h3>
+			<p>Status: 
+				{% if(device[2] == 1) %} 
+					active 
+				{% else %} 
+					inactive
+				{% endif %}
+			</p>
+		</div>
+	{% endfor %}
+</div>
+<script type="text/javascript">
+setTimeout(function(){
+   window.location.reload(1);
+}, 5000);
+
+</script>
+{% endblock %}

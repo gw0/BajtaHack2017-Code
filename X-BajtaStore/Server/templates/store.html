@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+ 
+{% block container %}
+<div class="row">
+	<h2>IoT application store</h2>
+</div>
+<div class="row">
+	<p>Find apps best suited for your home and your available SRM modules.</p>
+</div>
+<div class="row">
+  	{% for app in apps %}
+		<div class="col-sm-4 device">
+			<h3>{{app[1]}}</h3>
+		</div>
+	{% endfor %}
+</div>
+{% endblock %}
