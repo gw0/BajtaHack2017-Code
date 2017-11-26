@@ -1,0 +1,18 @@
+#Menu{
+			position:relative;
+			height:80px;
+			}
+			#LOGO{
+			z-index:1;
+			/*background-color: #97CBFF;*/
+			position:absolute;
+			top:0px;
+			left:0px;
+			width:200px;
+			height:80px;
+			color:black;
+			
+			}
+			.meni{
+			position:relative;
+			}

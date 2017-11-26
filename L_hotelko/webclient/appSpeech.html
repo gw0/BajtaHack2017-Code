@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="recorder">
+	<head>
+		<meta charset="utf-8">
+		<title>Speech Recording in Browser</title>
+		<link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.min.css" rel="stylesheet">
+		<link href="https://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet">
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js"></script>
+		<script src="appSpeech.js"></script>
+		<style type="text/css"> .red-btn { color: #D00000; } .green-btn { color: #00D000; } .blue-btn { color: #0000D0; } .inline { display: inline; } </style>
+	</head>
+	<body ng-controller="RecorderController">
+		<div class="container well">
+			<h1 class="text-center">BAJTAHACK - SPEECH CONTROL</h1>
+			<div class="row">
+				<div class="offset3 span3 text-center"><button class="btn" ng-click="startRecording()" ng-disabled="recording"><i class="icon-circle" ng-class="recordButtonStyle"></i>&nbsp;Start recording</button></div>
+				<div class="span3 text-center"><button class="btn" ng-click="stopRecording()" ng-disabled="!recording"><i class="icon-download-alt"></i>&nbsp;Stop recording</button></div>
+			</div>
+			<div class="row">
+				<div class="span12 text-center" ng-show="recording">
+					<span class="label label-important">Recording...</label>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

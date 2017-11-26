@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>SRM Instructions</title>
+       <meta charset="UTF-8">
+
+       <style>
+       .blockquote
+       {
+         display: block;
+       }
+       #Global
+       {
+         background-color: #cccccc;
+         width: 200px;
+       }
+       #ustvariGumb
+       {
+         background-color: #adadad;
+         width: 200px;
+       }
+       #ustvariLed
+       {
+         background-color: #9b9b9b;
+         width: 200px;
+       }
+       </style>
+  </head>
+  <body>
+
+    <!--<p id="debug">Output for comand line</p>
+    <textarea id="cmd_output" rows="8" cols="80"></textarea>
+    <br/>-->
+    <p>Output for script</p>
+    <textarea id="script_output" rows="20" cols="120"></textarea>
+<table class="block">
+  <tr>
+  <th>
+    <div id="Global">
+      <p>GLOBAL</p>
+      <p>device:</p><input id="device" type="text" name="device"  value="L1"><p>//L1, L2...</p>
+      <p>Service:</p><input id="service" type="text" name="service"  value="00"><p>//24, 27..</p>
+      <p>Type:</p><input id="type" type="text" name="type"  value="00"><p>//luc=LED, MOTION(pir), voda..</p>
+
+    </div>
+  </th>
+  <th>
+    <div id="ustvariGumb">
+      <p>CREATE BUTTON OR SENSOR</p>
+      <p>IntigerName:</p><input id="intname" type="text" name="intname"  value="old_"><p>//old_....</p>
+      <p>OperationName:</p><input id="opname" type="text" name="opname"  value="op_"><p>//op_....</p>
+      <p>TimerName:</p><input id="timename" type="text" name="timename"  value="timer_"><p>//timer_....</p>
+
+
+      <p>InOut:</p><input id="inout" type="text" name="InOut"  value="in"> <p>//in, out</p>
+      <p>PressMode:</p><input id="pressmode" type="text" name="PressMode"  value="pullup"> <p>//pullup, pulldown, floating</p>
+      <p>TimePeriod:</p><input id="period" type="text" name="period"  value="3000"> <p></p>
+      <p>TimeStardDelay:</p><input id="timeStardDelay" type="text" name="delay"  value="35000"> <p></p>
+
+      <button id="ustvariGumb">Create gumb!</button>
+    </div>
+  </th>
+  <th>
+
+    <div id="ustvariLed">
+      <p>CREATE LED</p>
+      <p>We need Device, service and type</p>
+      <button id="ustvariLED">Create LED!</button>
+    </div>
+  </th>
+  <th>
+
+    <div id="ustvariInit">
+      <p>CREATE Init</p>
+      <p>serverTimer:</p><input id="serverTimer" type="text" name="InOut"  value="in"> <p>//in, out</p>
+      <button id="init">Create Init!</button>
+    </div>
+  </th>
+  </tr>
+
+  </table>
+    <script
+			  src="https://code.jquery.com/jquery-3.2.1.min.js"
+			  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+			  crossorigin="anonymous"></script>
+    <script>
+
+      $(function(){
+
+          $("#ustvariGumb").on("click", function(){
+            $("#script_output").val(
+              "POST('/phy/gpio/alloc', \"" + $("#service").val() + "')\n" +
+              "PUT('/phy/gpio/" + $("#service").val() + "/cfg/value', '{\"dir\":\""+ $("#inout").val() +"\",\"mode\":\"" + $("#pressmode").val() + "\",\"irq\":\"none\",\"debouncing\":0}')\n"
+              +
+              "POST('/log/integer/alloc', '"+ $("#intname").val() + $("#service").val() + "')\n" +
+              "POST('/log/operator/alloc', '"+ $("#opname").val()+ $("#service").val() +"')\n" +
+              "PUT('/log/operator/"+ $("#opname").val()+$("#service").val()+"/cfg/value', '{\"op_type\":\"xor\",\"a_src\":\"link\",\"b_src\":\"link\",\"a_const\":\"\",\"b_const\":\"\"} ')\n" +
+              "PUT('/log/operator/"+ $("#opname").val()+$("#service").val()+"/links/op_a/value', '/phy/gpio/"+$("#service").val()+"/value')\n"+
+              "PUT('/log/operator/"+ $("#opname").val()+$("#service").val()+"/links/op_b/value', '/log/integer/"+$("#intname").val()+$("#service").val()+"/value')\n" +
+              "PUT('/log/operator/"+ $("#opname").val()+$("#service").val()+"/links/out/value', 'http://192.168.1.8:8080/bajtahack/notify?device="+$("#device").val()+"&service="+$("#service").val()+"&type="+$("#type").val()+"')\n"+
+              "POST('/log/operator/"+ $("#opname").val()+$("#service").val()+"/links/out/notify', '{\"url\":\"/log/integer/"+$("#intname").val()+$("#service").val()+"/value\"}')\n" +
+              "POST('/log/timer/alloc', 'time_button"+$("#service").val()+"')\n"+
+              "POST('/log/timer/time_button"+$("#service").val()+"/notify', '{\"url\":\"/log/operator/"+ $("#opname").val()+$("#service").val()+"/value\"}')\n"+
+              "PUT('/log/timer/time_button/cfg/value', '{\"period\":"+$("#period").val()+"} ')\n"+
+              "PUT('/log/timer/time_button/value', '"+$("#timeStardDelay").val()+"')"
+
+
+            );
+          });
+
+          $("#ustvariLED").on("click", function(){
+            $("#script_output").val(
+              "POST('/phy/gpio/alloc', '" + $("#service").val() + "')\n"+
+              "PUT('/phy/gpio/" + $("#service").val() + "/cfg/value', '{\"dir\":\"out\",\"mode\":\"floating\",\"irq\":\"none\",\"debouncing\":0}')\n"+
+              "POST('/phy/gpio/" + $("#service").val() + "/notify', '{\"url\":\"http://192.168.1.8:8080/bajtahack/notify?device="+$("#device").val()+"&service=" + $("#service").val() + "&type="+$("#type").val()+"\"}')"
+            );
+          });
+
+          $("#init").on("click", function(){
+            $("#script_output").val(
+              "POST('/log/timer/alloc',"+ $("#serverTimer").val()+"')\n"+
+              "PUT('/log/timer/'" + $("#serverTimer").val() + "'/cfg/value', '{\"period\":30000}')"+
+              "POST('/log/timer/'" + $("#serverTimer").val() + "'/notify', '{\"urlq\":\"http://192.168.1.8:8080/bajtahack/install?name=l3.srm.bajtahack.si\"}')\n"+
+              "PUT('/log/timer/'" + $("#serverTimer").val() + "'/value', '1')"
+            );
+          });
+
+      });
+
+
+    </script>
+
+  </body>
+</html>

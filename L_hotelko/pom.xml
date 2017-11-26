@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>si</groupId>
+    <artifactId>bajtahack</artifactId>
+    <version>1.0.0.0-SNAPSHOT</version>
+    <packaging>war</packaging>
+    <description>bajta hack</description>
+    <name>bajtahack</name>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>1.7</java.version>
+        <debug.build>true</debug.build>
+    </properties>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.5</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                            <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+                        </manifest>
+                        <manifestEntries>
+                            <Moped-Environment-Type>${moped.environment}</Moped-Environment-Type>
+                            <Svn-Revision-Number>${buildNumber}</Svn-Revision-Number>
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.10</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.0.1</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>net.sf.json-lib</groupId>
+            <artifactId>json-lib</artifactId>
+            <version>2.4</version>
+            <classifier>jdk15</classifier>
+        </dependency>
+		<dependency>
+		    <groupId>javax.mail</groupId>
+		    <artifactId>mail</artifactId>
+		    <version>1.4</version>
+		    <scope>provided</scope>
+		</dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>6.0.6</version>
+        </dependency>
+        <dependency>
+		  <groupId>com.github.ptnplanet</groupId>
+		  <artifactId>Java-Naive-Bayes-Classifier</artifactId>
+		  <version>1.0.7</version>
+		</dependency>
+		<dependency>
+		  <groupId>com.google.cloud</groupId>
+		  <artifactId>google-cloud</artifactId>
+		  <version>0.30.0-alpha</version>
+		</dependency>
+    </dependencies>
+
+    <repositories>
+        <repository>
+            <id>codelds</id>
+            <url>https://code.lds.org/nexus/content/groups/main-repo</url>
+        </repository>
+        <repository>
+    		<id>jitpack.io</id>
+    		<url>https://jitpack.io</url>
+  		</repository>
+    </repositories>
+
+
+</project>
