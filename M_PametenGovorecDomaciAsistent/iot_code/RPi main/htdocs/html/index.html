@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" type="image/png" sizes="16x16" href="../plugins/images/favicon.png">
+    <title>Pixel Admin - Responsive Admin Dashboard Template built with Twitter Bootstrap</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Menu CSS -->
+    <link href="../plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css" rel="stylesheet">
+    <!-- toast CSS -->
+    <link href="../plugins/bower_components/toast-master/css/jquery.toast.css" rel="stylesheet">
+    <!-- morris CSS -->
+    <link href="../plugins/bower_components/morrisjs/morris.css" rel="stylesheet">
+    <!-- animation CSS -->
+    <link href="css/animate.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <!-- color CSS -->
+    <link href="css/colors/blue-dark.css" id="theme" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="cssload-speeding-wheel"></div>
+    </div>
+    <div id="wrapper">
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top m-b-0">
+            <div class="navbar-header"> <a class="navbar-toggle hidden-sm hidden-md hidden-lg " href="javascript:void(0)" data-toggle="collapse" data-target=".navbar-collapse"><i class="fa fa-bars"></i></a>
+                <div class="top-left-part"><a class="logo" href="index.html"><b><img src="../plugins/images/pixeladmin-logo.png" alt="home" /></b><span class="hidden-xs"><img src="../plugins/images/pixeladmin-text.png" alt="home" /></span></a></div>
+            </div>
+            <!-- /.navbar-header -->
+            <!-- /.navbar-top-links -->
+            <!-- /.navbar-static-side -->
+        </nav>
+        <!-- Left navbar-header -->
+        <div class="navbar-default sidebar" role="navigation">
+            <div class="sidebar-nav navbar-collapse slimscrollsidebar">
+                <ul class="nav" id="side-menu">
+                    <li style="padding: 10px 0 0;">
+                        <a href="index.html" class="waves-effect"><i class="fa fa-th fa-fw" aria-hidden="true"></i><span class="hide-menu">Dashboard</span></a>
+                    </li>
+                    <li>
+                        <a href="basic-table.html" class="waves-effect"><i class="fa fa-users fa-fw" aria-hidden="true"></i><span class="hide-menu">Users</span></a>
+                    </li>
+                    <li>
+                        <a href="alarms.html" class="waves-effect"><i class="fa fa-warning fa-fw" aria-hidden="true"></i><span class="hide-menu">Alarms</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Left navbar-header end -->
+        <!-- Page Content -->
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row bg-title">
+                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                        <h4 class="page-title">Dashboard</h4> </div>
+                    </div>
+                    <!-- /.col-lg-12 -->
+                </div>
+                <!-- row -->
+                <div class="row">
+                    <!--col -->
+                    <a href="#" id="tempIn">
+                      <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                          <div class="white-box">
+                              <div class="col-in row">
+                                  <div class="col-md-6 col-sm-6 col-xs-6"> <i data-icon="E" class="linea-icon linea-basic"></i>
+                                      <h5 class="text-muted vb">TEMPERATURE INDOORS</h5> </div>
+                                  <div class="col-md-6 col-sm-6 col-xs-6">
+                                      <h3 class="counter text-right m-t-15 text-danger">23</h3> </div>
+                                  <div class="col-md-12 col-sm-12 col-xs-12">
+                                      <div class="progress">
+                                          <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%"> <span class="sr-only">40% Complete (success)</span> </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                    </a>
+                    <!-- /.col -->
+                    <!--col -->
+                    <a href="#" id="humIn">
+                      <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                          <div class="white-box">
+                              <div class="col-in row">
+                                  <div class="col-md-6 col-sm-6 col-xs-6"> <i class="linea-icon linea-basic" data-icon="&#xe01b;"></i>
+                                      <h5 class="text-muted vb">HUMIDITY INDOORS</h5> </div>
+                                  <div class="col-md-6 col-sm-6 col-xs-6">
+                                      <h3 class="counter text-right m-t-15 text-megna">169</h3> </div>
+                                  <div class="col-md-12 col-sm-12 col-xs-12">
+                                      <div class="progress">
+                                          <div class="progress-bar progress-bar-megna" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%"> <span class="sr-only">40% Complete (success)</span> </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                    </a>
+                    <!-- /.col -->
+                    <!--col -->
+                  <a href="#" id="tempOut">
+                    <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                        <div class="white-box">
+                            <div class="col-in row">
+                                <div class="col-md-6 col-sm-6 col-xs-6"> <i class="linea-icon linea-basic" data-icon="&#xe00b;"></i>
+                                    <h5 class="text-muted vb">TEMPERATURE OUTDOORS</h5> </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                    <h3 class="counter text-right m-t-15 text-primary">157</h3> </div>
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%"> <span class="sr-only">40% Complete (success)</span> </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                    </a>
+                    <!-- /.col -->
+                    <!--col -->
+                    <a href="#" id="humOut">
+                      <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                          <div class="white-box">
+                              <div class="col-in row">
+                                  <div class="col-md-6 col-sm-6 col-xs-6"> <i class="linea-icon linea-basic" data-icon="&#xe00b;"></i>
+                                      <h5 class="text-muted vb">HUMIDITY OUTDOORS</h5> </div>
+                                  <div class="col-md-6 col-sm-6 col-xs-6">
+                                      <h3 class="counter text-right m-t-15 text-primary">157</h3> </div>
+                                  <div class="col-md-12 col-sm-12 col-xs-12">
+                                      <div class="progress">
+                                          <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%"> <span class="sr-only">40% Complete (success)</span> </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                    <a>
+                    <!-- /.col -->
+                    <!--col -->
+                      <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                        <div class="white-box">
+                            <div class="col-in row">
+                                <div class="col-md-6 col-sm-6 col-xs-6"> <i class="linea-icon linea-basic" data-icon="&#xe00b;"></i>
+                                    <h5 class="text-muted vb">WEATHER OUTSIDE</h5> </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                  <i class="fa fa-umbrella fa-4x" aria-hidden="true"></i>
+                                  <i class="fa fa-sun-o fa-4x" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.col -->
+
+                    <!--col -->
+                    <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                      <div class="white-box">
+                          <div class="col-in row">
+                            <div class="col-md-9 col-sm-6 col-xs-6"> <i class="linea-icon linea-basic" data-icon="&#xe00b;"></i>
+                              <h5 class="text-muted vb">LIGHT LIVING ROOM</h5>
+                            </div>
+                            <div class="col-md-3 col-sm-6 col-xs-6">
+                              <input checked data-toggle="toggle" type="checkbox">
+                            </div>
+                          </div>
+                      </div>
+                    </div>
+                    <!-- /.col -->
+
+                    <!--col -->
+                    <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                      <div class="white-box">
+                          <div class="col-in row">
+                            <div class="col-md-5 col-sm-6 col-xs-6"> <i class="linea-icon linea-basic" data-icon="&#xe00b;"></i>
+                              <h5 class="text-muted vb">FURNACE TEMP</h5>
+                            </div>
+                            <div class="col-md-7 col-sm-6 col-xs-6">
+                              <div class="input-group number-spinner">
+                                <span class="input-group-btn data-dwn">
+                                  <button class="btn btn-default btn-info" data-dir="dwn"><span class="glyphicon glyphicon-minus"></span></button>
+                                </span>
+                                <input type="text" class="form-control text-center" value="1" min="-10" max="40">
+                                <span class="input-group-btn data-up">
+                                  <button class="btn btn-default btn-info" data-dir="up"><span class="glyphicon glyphicon-plus"></span></button>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                      </div>
+                    </div>
+                    <!-- /.col -->
+
+                    <!--col -->
+                    <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                      <div class="white-box">
+                          <div class="col-in row">
+                            <div class="col-md-5 col-sm-6 col-xs-6"> <i class="linea-icon linea-basic" data-icon="&#xe00b;"></i>
+                              <h5 class="text-muted vb">AIR CONDITIONER TEMP</h5>
+                            </div>
+                            <div class="col-md-7 col-sm-6 col-xs-6">
+                              <div class="input-group number-spinner">
+                                <span class="input-group-btn data-dwn">
+                                  <button class="btn btn-default btn-info" data-dir="dwn"><span class="glyphicon glyphicon-minus"></span></button>
+                                </span>
+                                <input type="text" class="form-control text-center" value="1" min="-10" max="40">
+                                <span class="input-group-btn data-up">
+                                  <button class="btn btn-default btn-info" data-dir="up"><span class="glyphicon glyphicon-plus"></span></button>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                      </div>
+                    </div>
+                    <!-- /.col -->
+                </div>
+                <!-- /.row -->
+                <!--row -->
+                <div class="row hidden" id="tempsHumIn">
+                    <div class="col-md-12">
+                        <div class="white-box">
+                            <h3 class="box-title">INDOOR TEMPTERATURE AND HUMIDITY</h3>
+                            <ul class="list-inline text-right">
+                                <li>
+                                    <h5><i class="fa fa-circle m-r-5" style="color: #dadada;"></i>Temperature</h5>
+                                </li>
+                                <li>
+                                    <h5><i class="fa fa-circle m-r-5" style="color: #aec9cb;"></i>Humidity</h5>
+                                </li>
+                            </ul>
+                            <div id="morris-area-chart2" style="height: 370px;"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.row -->
+                <!--row -->
+                <div class="row hidden" id="tempsHumOut">
+                    <div class="col-md-12">
+                        <div class="white-box">
+                            <h3 class="box-title">OUTDOOR TEMPTERATURE AND HUMIDITY</h3>
+                            <ul class="list-inline text-right">
+                                <li>
+                                    <h5><i class="fa fa-circle m-r-5" style="color: #dadada;"></i>Temperature</h5>
+                                </li>
+                                <li>
+                                    <h5><i class="fa fa-circle m-r-5" style="color: #aec9cb;"></i>Humidity</h5>
+                                </li>
+                            </ul>
+                            <div id="morris-area-chart2" style="height: 370px;"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.container-fluid -->
+        </div>
+        <!-- /#page-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="../plugins/bower_components/jquery/dist/jquery.min.js"></script>
+
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+    <!-- Menu Plugin JavaScript -->
+    <script src="../plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js"></script>
+    <!--slimscroll JavaScript -->
+    <script src="js/jquery.slimscroll.js"></script>
+    <!--Wave Effects -->
+    <script src="js/waves.js"></script>
+    <!--Counter js -->
+    <script src="../plugins/bower_components/waypoints/lib/jquery.waypoints.js"></script>
+    <script src="../plugins/bower_components/counterup/jquery.counterup.min.js"></script>
+    <!--Morris JavaScript -->
+    <script src="../plugins/bower_components/raphael/raphael-min.js"></script>
+    <script src="../plugins/bower_components/morrisjs/morris.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="js/custom.min.js"></script>
+    <script src="js/dashboard1.js"></script>
+    <script src="../plugins/bower_components/toast-master/js/jquery.toast.js"></script>
+    <!-- Custom js -->
+    <script src="js/customScripts.js"></script>
+
+    <script type="text/javascript">
+    </script>
+</body>
+
+</html>
