@@ -1,0 +1,78 @@
+
+<html>
+
+<head>
+  <title>Light Control System</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/css/style.css" rel="stylesheet">
+  <link href="/libraries/bootstrap/css/bootstrap.css" rel="stylesheet">
+  <link href="/libraries/bootstrap/css/bootstrap-theme.css" rel="stylesheet">
+  <link href="/libraries/bootstrap/dist/bootstrap.fd.css" rel="stylesheet">
+
+  <script src="/libraries/jquery/jquery.js"></script>
+  <script src="/libraries/bootstrap/js/bootstrap.js"></script>
+	<script src="/libraries/bootstrap/dist/bootstrap.fd.js"></script>
+  <script src="/libraries/vue/vue.js"></script>
+  <script src="/libraries/svg/svg.js"></script>
+  <script src="/js/room.js"></script>
+
+  <style>
+    body{
+      padding-top:100px;
+    }
+  </style>
+
+</head>
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid" style="padding-top:8px; padding-bottom:8px;">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/"><span style="font-size:25px;"><b>Light Control System</b></span></a>
+        </div>
+
+      </div>
+    </nav>
+
+    <div id="room" class="container-fluid">
+      <div  class="row">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+          <svg id="tloris">
+          </svg>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+          <table class="table table-hover" style="margin-top:10px;">
+          <thead>
+            <tr>
+              <th>Light name</th>
+              <th>Connected on</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody >
+            <tr v-for="l, lightID in room.lights" v-bind:style="[l.selected ? {background:'rgba(1,1,1,0.2)'}  : {}]" v-on:click=(l.selected)>
+              <td>Light {{lightID}}</td>
+              <td>
+                GPIO {{l.gpioPin}}
+              </td>
+              <td>
+                <div class="onoffswitch" style="">
+                   <input :id="'statusSenzor'+lightID" type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" v-model="l.status" v-on:click="changeStateOfLight(room, lightID)">
+                   <label class="onoffswitch-label" :for="'statusSenzor'+lightID">
+                   <span class="onoffswitch-inner"></span>
+                   <span class="onoffswitch-switch"></span>
+                   </label>
+                </div>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+        </div>
+      </div>
+    </div>
+
+</body>
+</html>

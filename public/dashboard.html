@@ -1,0 +1,239 @@
+
+<html>
+
+<head>
+  <title>Light Control System</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/css/style.css" rel="stylesheet">
+  <link href="/libraries/bootstrap/css/bootstrap.css" rel="stylesheet">
+  <link href="/libraries/bootstrap/css/bootstrap-theme.css" rel="stylesheet">
+  <link href="/libraries/bootstrap/dist/bootstrap.fd.css" rel="stylesheet">
+
+  <script src="/libraries/jquery/jquery.js"></script>
+  <script src="/libraries/bootstrap/js/bootstrap.js"></script>
+	<script src="/libraries/bootstrap/dist/bootstrap.fd.js"></script>
+  <script src="/libraries/vue/vue.js"></script>
+  <script src="/libraries/svg/svg.js"></script>
+  <script src="/js/dashboard.js"></script>
+
+
+  <style>
+    body{
+      padding-top:100px;
+    }
+
+    .room-heading:hover{
+      cursor:pointer;
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1));
+    }
+  </style>
+
+</head>
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid" style="padding-top:8px; padding-bottom:8px;">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/"><span style="font-size:25px;"><b>Light Control System</b></span></a>
+        </div>
+
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+
+        <div class="row">
+
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-addRoom" style="padding:15px;">
+              <div style="float:top">
+                <span class="glyphicon glyphicon-plus" style="font-size:25px;" </span>
+              </div>
+              <div style="float:top">
+                <span style="font-size:25px;"> Add room </span>
+              </div>
+            </button>
+          </div>
+
+          <!-- START Popup form to add room-->
+          <div id="modal-addRoom" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Add room</h4>
+                </div>
+
+                <div class="modal-body" style="padding-bottom:50px;">
+
+                  <form id="form-addRoom">
+                   <div class="form-group">
+                      <label for="email">Room name:</label>
+                      <input type="text" class="form-control" id="modal-addRoom-roomName" name="roomName">
+                    </div>
+                    <div class="form-group">
+                      <label for="pwd">Room description:</label>
+                      <input type="text" class="form-control" id="modal-addRoom-roomDescription" name="roomDescription">
+                    </div>
+                    <div class="form-group">
+                      <label for="pwd">IP Address:</label>
+                      <input type="text" class="form-control" id="controller" name="roomDescription">
+                    </div>
+                      <button type="button" class="btn btn-success" style="float:left;"  v-on:click="addRoom()" >Add room</button>
+                      <button type="button" class="btn btn-default" data-dismiss="modal" style="float:right;">Close</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- END Popup form to add room-->
+
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding-top:20px;">
+            <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <p style="font-size:20px;padding-bottom:0px;margin-bottom:0px;"><b>Rooms</b></p>
+                <hr size="2" style="border-color:black;padding-top:0; margin-top:0px;">
+              </div>
+            </div>
+            <div id="rooms-list" class="row">
+
+              <!-- for each room one panel -->
+              <div class="room col-xs-12 col-sm-4 col-md-4 col-lg-4"  v-for="room in rooms" >
+                  <div class="panel panel-default">
+                    <div class="room-heading panel-heading" style="font-size:20px;" v-on:click="redirect(room)">{{room.name}}</div>
+                    <div style="" class="panel-heading" >
+                        <span style="display:inline-block">Controller status:</span>
+                        <div style="display:inline-block;">
+                          <span class="label label-success" v-if="room.controller.connection">Connected</span>
+                          <span class="label label-danger" v-else="room.controller.connection">Not Connected</span>
+                          <span class="label label-success" v-if="room.controller.configuration">Configured</span>
+                          <span class="label label-danger" v-else="room.controller.configuration">Not Configured</span>
+
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                      <span style="display:block">Controller IP: <span><b>{{room.controller.ip}}</b></span> </span>
+                      <!--<span style="display:block">Room description: <span><b>{{room.numberOfLightsOFF}}</b></span></span>-->
+                    </div>
+                    <div class="panel-heading">
+                      <span style="display:inline-block">Quick commands:</span>
+                      <div style="display:inline-block; margin-top:5px;">
+                        <button type="button" class="btn btn-primary btn-sm" :disabled=isButtonDisabled(room)>Turn lights ON</button>
+                        <button type="button" class="btn btn-primary btn-sm" :disabled=isButtonDisabled(room)>Turn lights OFF</button>
+                      </div>
+                    </div>
+                    <div class="panel-heading">
+                      <div style=" margin-top:5px;">
+
+                        <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" :data-target="'#modal-roomMap' + room.id"> <span class="glyphicon glyphicon-picture"></span> <span style="margin-left:3px;">Room map</span> </button>
+
+                        <!-- modal for room map -->
+                        <div :id="'modal-roomMap' + room.id" class="modal fade" role="dialog">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+
+                              <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Upload Room map</h4>
+                              </div>
+
+                              <div class="modal-body" style="padding-bottom:50px;">
+                                <div id="uploadRoomMap">
+                                  <div style="display:inline-block">
+                                    <form action="/uploadRoomMap" method="post" enctype="multipart/form-data">
+                                        <input type="text" name="roomId" style="display:none;" :value="room.id"> <!-- secret room.id sent in form -->
+                                        <input type="file" name="image" style="display:inline-block" required>
+
+                                        <input type="submit" class="btn btn-primary btn-sm" value="Upload">
+                                    </form>
+                                  </div>
+                                </div>
+                                <div id="showCurrentRoomMap" style="width:100%;margin-top:10px;">
+                                  <h4>Current Room map</h4>
+                                  <hr>
+                                  <img width="100%" :src="roomMapPath(room)" alt="Not Found" onerror=this.src="images/nomap.gif" > </img>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- END modal for room map-->
+
+                        <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" :data-target="'#modal-configure' + room.id" v-on:click="drawRoomMapOnCanvas(room)"> <span class="glyphicon glyphicon-cog"></span> <span style="margin-left:3px;">Configure</span> </button>
+
+                        <!-- modal for configure -->
+                        <div :id="'modal-configure' + room.id" class="modal fade" role="dialog">
+                          <div class="modal-dialog">
+                            <div :id="'modal-content' + room.id" class="modal-content">
+
+                              <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Configure room</h4>
+                              </div>
+
+                              <div class="modal-body" style="padding-bottom:50px;">
+                                <div class="display:block;">
+                                  <button :id="'addLight'+room.id" type="button" class="btn btn-success btn-sm" v-on:click="addLight(room)"><span class="glyphicon glyphicon-plus"></span><span style="margin-left:3px;">Add light</span></button>
+
+                                  <button :id="'selectLight'+room.id" type="button" class="btn btn-primary btn-sm" v-on:click="selectLight(room)"><span style="margin-left:3px;">Select light</span></button>
+                                </div>
+                                <div  style="width:100%;">
+                                  <svg :id="'tloris' + room.id">
+
+                                  </svg>
+                                </div>
+
+                                <table class="table table-hover" style="margin-top:10px;">
+                                <thead>
+                                  <tr>
+                                    <th>Light name</th>
+                                    <th>Connected on</th>
+                                    <th></th>
+                                  </tr>
+                                </thead>
+                                <tbody >
+                                  <tr v-for="l, lightID in room.lights" v-bind:style="[l.selected ? {background:'rgba(1,1,1,0.2)'}  : {}]">
+                                    <td>Light {{lightID}}</td>
+                                    <td>
+                                      <select v-model="l.gpioPin">
+
+                                        <option v-for="i in gpioPins" v-bind:value="i">GPIO {{i}}</option>
+                                      </select>
+                                    </td>
+                                    <td>
+                                      <button type="button" class="btn btn-danger btn-sm" v-on:click="removeLight(room,lightID)"><span class="glyphicon glyphicon-minus"></span><span style="margin-left:3px;">Remove light</span></button>
+                                    </td>
+                                  </tr>
+
+                                </tbody>
+                              </table>
+
+                              <button type="button" class="btn btn-success" style="display: inline-block; float:left; " v-on:click="saveConfiguration(room)">Save settings</button>
+                              <button type="button" class="btn btn-default" data-dismiss="modal" style="display:inline-block; float:right;">Close</button>
+
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- END modal for configure-->
+
+                        <button type="button" class="btn btn-danger btn-sm" style="float:right;" v-on:click="removeRoom(room)">Remove room</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- END for each room one panel -->
+
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "name": "group-by",
+  "repo": "component/group-by",
+  "description": "Group an array by property value or callback",
+  "version": "0.0.1",
+  "keywords": ["array", "group-by", "utility"],
+  "dependencies": {
+    "component/to-function": "*"
+  },
+  "development": {},
+  "scripts": [
+    "index.js"
+  ]
+}
