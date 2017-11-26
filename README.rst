@@ -30,6 +30,8 @@ Usage
 
     export FLASK_APP=web
     flask run
+    
+    There are some hard-coded pins and adresses in web/butler/butler.py
 
 For development
 ---------------
@@ -49,5 +51,5 @@ Run tests
 .. code:: sh
 
     python setup.py test
-    pylint web test butler
+    pylint web test
 
