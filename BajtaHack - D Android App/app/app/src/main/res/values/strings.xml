@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">SRM Example 01</string>
+
+    <string name="setup_title">Setup</string>
+    <string name="setup_url">URL:</string>
+    <string name="setup_url_default">https://d2.srm.bajtahack.si:16200</string>
+    <string name="setup_username">Username:</string>
+    <string name="setup_password">Password:</string>
+    <string name="setup_init">Init</string>
+    <string name="setup_reboot">Reboot</string>
+
+    <string name="led_gpio">LED GPIO port:</string>
+    <string name="led_gpio_default">2</string>
+    <string name="button_gpio">Button GPIO port:</string>
+    <string name="buzzer_pwm">Buzzer PWM port:</string>
+    <string name="buzzer_period">Buzzer period:</string>
+    <string name="buzzer_period_default">5000</string>
+
+    <string name="led_title">LED</string>
+    <string name="led_on">On</string>
+    <string name="led_off">Off</string>
+
+    <string name="button_title">Temperature</string>
+    <string name="button_refresh">Refresh</string>
+
+    <string name="buzzer_title">Photo</string>
+    <string name="buzzer_on">On</string>
+    <string name="buzzer_off">Off</string>
+
+    <string name="state">Status:</string>
+    <string name="state_unknown">\?</string>
+</resources>
