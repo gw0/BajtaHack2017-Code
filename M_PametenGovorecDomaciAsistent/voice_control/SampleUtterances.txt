@@ -1,0 +1,2 @@
+LightControlIntent to turn light {light} {status}
+RewardIntent that it {reward}

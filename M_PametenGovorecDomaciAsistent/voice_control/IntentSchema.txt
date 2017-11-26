@@ -1,0 +1,26 @@
+{
+  "intents": [
+    {
+      "slots": [
+        {
+          "name": "status",
+          "type": "LIGHT_CONTROL"
+        },
+        {
+          "name": "light",
+          "type": "AMAZON.NUMBER"
+        }
+      ],
+      "intent": "LightControlIntent"
+    },
+    {
+      "slots": [
+        {
+          "name": "reward",
+          "type": "REWARD_CONTROL"
+        }
+      ],
+      "intent": "RewardIntent"
+    }
+  ]
+}

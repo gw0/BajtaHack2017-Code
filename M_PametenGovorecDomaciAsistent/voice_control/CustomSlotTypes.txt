@@ -1,0 +1,9 @@
+LIGHT_CONTROL	
+on
+off
+
+REWARD_CONTROL
+absolutely not
+no
+ok
+yes, well done
