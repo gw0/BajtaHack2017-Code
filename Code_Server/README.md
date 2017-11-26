@@ -6,10 +6,10 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-Python 2.7.12 |Anaconda 4.2.0 
-google drive slike
-Raspberry Pi Orange
-u-blox SRM modfule
+* Python 2.7.12 |Anaconda 4.2.0 
+* https://drive.google.com/drive/folders/18KEY5p0tv4nied39urka656bCjzJypD-?usp=sharing
+* Raspberry Pi Orange
+* u-blox SRM modfule
 
 ### Installing
 * Connect Rasberry Pi with u-blox SRM module. 
@@ -19,7 +19,7 @@ u-blox SRM modfule
 sudo rm /etc/iptables/*
 sudo reboot
 ```
-* Copy images from Google drive to project path
+* Copy images from Google drive (https://drive.google.com/drive/folders/18KEY5p0tv4nied39urka656bCjzJypD-?usp=sharing) to project path
 * Run server.py
 * Run post_measurements.py
 * Run post_motion.py
@@ -27,8 +27,8 @@ sudo reboot
 
 ## Authors
 
-* **Krivec Tadej** - [PurpleBooth](https://github.com/tadejkrivec)
-* **Miha Gazvoda** - [PurpleBooth](https://github.com/mihagazvoda)
+* [Krivec Tadej](https://github.com/tadejkrivec)
+* [Miha Gazvoda](https://github.com/mihagazvoda)
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
