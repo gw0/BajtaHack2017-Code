@@ -1,0 +1,6 @@
+https://g1.srm.bajtahack.si:24100
+
+/** Living room g1 */
+
+POST('https://g1.srm.bajtahack.si:24100/phy/gpio/alloc', '27')
+PUT('https://g1.srm.bajtahack.si:24100/phy/gpio/27/cfg/value', '{"dir":"out","mode":"floating","irq":"none","debouncing":0}')

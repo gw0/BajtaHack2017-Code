@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">BajtaHack</string>
+  <string name="btn_background_blue">#4286f4</string>
+  <string name="btn_color_white">#f4f6f9</string>
+</resources>

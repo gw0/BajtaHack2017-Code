@@ -1,0 +1,6 @@
+https://g3.srm.bajtahack.si:24300
+
+/** Kitchen g3 */
+
+POST('https://g3.srm.bajtahack.si:24300/phy/i2c/alloc', '1')
+POST('https://g3.srm.bajtahack.si:24300/phy/i2c/1/slaves/alloc', '32')
