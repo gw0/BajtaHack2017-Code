@@ -29,7 +29,7 @@ recorderApp.controller('RecorderController', [ '$scope' , function($scope) {
     		text: ""
     };
     
-    $scope._google_api_key = 'AIzaSyDzpZi9rAMLif-rRiMs3fVlnG2_Eyu3JBA';
+    $scope._google_api_key = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
     $scope._asr_alternatives = 20;
     $scope.result_mode = 'asr';
     
