@@ -1,0 +1,35 @@
+ /* STARTUP */
+ 
+POST('/phy/gpio/alloc', '17')
+POST('/phy/gpio/alloc', '27')
+POST('/phy/gpio/alloc', '26')
+PUT('/phy/gpio/17/cfg/value', '{"dir":"out","mode":"pulldown","irq":"none","debouncing":0}')
+PUT('/phy/gpio/27/cfg/value', '{"dir":"out","mode":"pulldown","irq":"none","debouncing":0}')
+PUT('/phy/gpio/26/cfg/value', '{"dir":"out","mode":"pulldown","irq":"none","debouncing":0}')
+
+PUT('/phy/gpio/17/value', '0')
+PUT('/phy/gpio/27/value', '0')
+PUT('/phy/gpio/26/value', '0')
+
+POST('/sys/interpreter/alloc', '1')
+PUT('/sys/interpreter/1/links/source/value', '/sys/file/1/value')
+
+POST('/sys/interpreter/alloc', '2')
+PUT('/sys/interpreter/2/links/source/value', '/sys/file/2/value')
+
+POST('/sys/interpreter/alloc', '3')
+PUT('/sys/interpreter/3/links/source/value', '/sys/file/3/value')
+
+POST('/sys/interpreter/alloc', '4')
+PUT('/sys/interpreter/4/links/source/value', '/sys/file/4/value')
+
+POST('/sys/interpreter/alloc', '5')
+PUT('/sys/interpreter/5/links/source/value', '/sys/file/5/value')
+
+POST('/sys/interpreter/alloc', '6')
+PUT('/sys/interpreter/6/links/source/value', '/sys/file/6/value')
+
+POST('/sys/interpreter/alloc', '7')
+PUT('/sys/interpreter/7/links/source/value', '/sys/file/7/value')
+
+

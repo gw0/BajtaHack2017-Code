@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    </head>
+    <style type="text/css">
+      .btn{
+      margin-top:10px;
+      }
+    </style>
+
+    <body>
+      <div class="container " >
+        <h2>Smart Alarm Clock</h2>
+        <hr>
+        <h3>Manual commands</h3>
+        <input id="cmdOff" type="button" class="btn btn-info" value="Turn off" >
+        <input id="cmdOn"type="button" class="btn btn-info" value="Turn on">
+        <input id="cmdWhite" type="button" class="btn btn-info" value="White">
+        <input id="cmdBrighter" type="button" class="btn btn-info" value="Brightness+">
+        <input id="cmdDimmer" type="button" class="btn btn-info" value="Brightness-">
+        <input id="cmdSmooth" type="button" class="btn btn-info" value="Smooth">
+        <hr>
+      </div>
+
+      <div class="container">
+        <div class="col-md-4 table-responsive">
+          <h3>Alarms</h3>
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Time</th>
+                <th>Add/Delete</th>
+              </tr>
+            </thead>
+            <tbody id="alarmList">
+
+            </tbody>
+            <tfooter>
+              <tr>
+                <td>
+                  <input type="time" class="form-control" id="newAlarmTime" step="60">
+                </td>
+                <td>
+                  <button type="button" class="btn btn-default btn-sm btn-success" id="newAlarmSubmit">
+                    <span class="glyphicon  glyphicon-ok "></span>
+                  </button>
+                </td>
+              </tr>
+            </tfooter>
+          </table>
+        </div>
+      </div>
+      +
+
+
+
+      <script>
+        /* Start command functions */
+
+        var baseUrl = "https://r2.srm.bajtahack.si:12200/sys/interpreter/";
+        var endUrl = "/value";
+        var commandResetTimeoutDelay = 300;
+
+        function commandCall(id, cb) {
+          console.log("Calling command #" + id);
+          $.ajax({
+            url: baseUrl + id + endUrl,
+            type: 'PUT',
+            success: cb
+          });
+        }
+
+        function commandReset(cb) {
+          commandCall(7,cb);
+        }
+
+        function commandOff(cb) {
+          commandCall(1,
+            function() {
+              setTimeout(function() {
+                commandReset(cb);
+              }, commandResetTimeoutDelay);
+            }
+          );
+        }
+
+        function commandOn(cb) {
+          commandCall(2,
+            function() {
+              setTimeout(function() {
+                commandReset(cb);
+              }, commandResetTimeoutDelay);
+            }
+          );
+        }
+
+        function commandWhite(cb) {
+          commandCall(3,
+            function() {
+              setTimeout(function() {
+                commandReset(cb);
+              }, commandResetTimeoutDelay);
+            }
+          );
+        }
+
+        function commandBrightnessUp(cb) {
+          commandCall(4,
+            function() {
+              setTimeout(function() {
+                commandReset(cb);
+              }, commandResetTimeoutDelay);
+            }
+          );
+        }
+
+        function commandBrightnessDown(cb) {
+          commandCall(5,
+            function() {
+              setTimeout(function() {
+                commandReset(cb);
+              }, commandResetTimeoutDelay);
+            }
+          );
+        }
+
+        function commandSmooth(cb) {
+          commandCall(6,
+            function() {
+              setTimeout(function() {
+                commandReset(cb);
+              }, commandResetTimeoutDelay);
+            }
+          );
+        }
+
+        /* End command functions */
+
+        /* Start command button impl */
+        $('#cmdOff').click(function() {
+          commandOff();
+        });
+
+        $('#cmdOn').click(function() {
+          commandOn();
+        });
+
+        $('#cmdWhite').click(function() {
+          commandWhite();
+        });
+
+        $('#cmdBrighter').click(function() {
+          commandBrightnessUp();
+        });
+
+        $('#cmdDimmer').click(function() {
+          commandBrightnessDown();
+        });
+        $('#cmdSmooth').click(function() {
+          commandSmooth();
+        });
+        /* End command button impl */
+
+        /* Start alarm clock api */
+        var aClockURL = "https://r2.srm.bajtahack.si:5000"
+        function alarmClockList(cb, err) {
+          $.ajax({
+            url: aClockURL,
+            type: 'GET',
+            success: cb,
+            error: err
+          });
+        }
+
+        function buildClockList() {
+          console.log("Sending clock list req");
+          $('#alarmList').html("");
+
+          alarmClockList(function(data) {
+            console.log("recieved:", data);
+            if (data && data.alarms) {
+              data.alarms.forEach((elm) => {
+                  var id = elm.alarm.split(":").join("-");
+                  $('#alarmList').append(`<tr><td class="tst">${elm.alarm}</td><td><button id="alarmDel-${id}" type="button" class="btn btn-default btn-sm btn-danger">
+                    <span class="glyphicon glyphicon-trash"></span></button></td></tr>`);
+              });
+
+              $("button[id^='alarmDel']").click((d)=> {
+                var aip = d.currentTarget.id.split("-");
+                aip.shift();
+                aip = aip.join(":");
+                console.log("deleting:", aip);
+                delClock(aip, function() {setTimeout(buildClockList,1000)});
+              })
+
+            }
+          });
+        }
+
+        buildClockList();
+
+        function delClock(aid, cb) {
+          $.ajax({
+            url: aClockURL+"/"+aid,
+            type: 'DELETE',
+            success: cb,
+          });
+        }
+
+        $('#newAlarmSubmit').click(function() {
+
+          var time = $('#newAlarmTime').val();
+          time += ":00";
+
+          var fd = new FormData();
+          fd.append( 'time', time );
+          console.log(time);
+          $.ajax({
+            url: aClockURL,
+            data: fd,
+            type: 'PUT',
+            cache : false,
+            processData: false,
+            contentType: false,
+            success: function() {
+              setTimeout(buildClockList, 1000);
+            },
+          });
+
+        });
+
+
+
+      </script>
+
+
+
+    </body>
+</html>
