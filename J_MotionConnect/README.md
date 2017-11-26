@@ -1,13 +1,16 @@
 # MotionConnect
 Where motion meets magic
 
+## Details
+All details are written in BajtaHack.pdf
+
 ## Setup
-Needed:
+### Needed:
  - MongoDB database for data storage
  - Python 2.7
  - Gesture sensor PCB with MGC3030
 
-Steps:
+### Steps:
  - run prepare_database.py to populate default values to database
  - run api.py to run API specific to this project
  - run orange_pi_controls to setup the J2 orange pi
