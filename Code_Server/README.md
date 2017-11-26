@@ -1,6 +1,4 @@
-# Bistroumna štalica
-
-
+# Bistroumna štal'ca
 
 ## Getting Started
 
@@ -21,15 +19,20 @@ u-blox SRM modfule
 sudo rm /etc/iptables/*
 sudo reboot
 ```
+* Copy images from Google drive to project path
+* Run server.py
+* Run post_measurements.py
+* Run post_motion.py
+* Navigate to http://127.0.0.1:5000/ and enjoy!
 
 ## Authors
 
 * **Krivec Tadej** - [PurpleBooth](https://github.com/tadejkrivec)
-* **Krivec Tadej** - [PurpleBooth](https://github.com/mihagazvoda)
+* **Miha Gazvoda** - [PurpleBooth](https://github.com/mihagazvoda)
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the AGPLv3 license - see the https://opensource.org/licenses/AGPL-3.0 file for details
 
