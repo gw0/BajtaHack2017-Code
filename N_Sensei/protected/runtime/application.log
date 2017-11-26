@@ -1,0 +1,442 @@
+2017/11/25 14:10:56 [error] [php] Undefined variable: select (C:\wamp64\www\bajtahack\protected\views\site\index.php:11)
+Stack trace:
+#0 C:\wamp64\www\framework\web\CController.php(872): SiteController->renderFile()
+#1 C:\wamp64\www\framework\web\CController.php(785): SiteController->renderPartial()
+#2 C:\wamp64\www\bajtahack\protected\controllers\SiteController.php(32): SiteController->render()
+#3 C:\wamp64\www\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#4 C:\wamp64\www\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\wamp64\www\framework\web\CController.php(286): SiteController->runAction()
+#6 C:\wamp64\www\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#7 C:\wamp64\www\framework\web\CWebApplication.php(282): SiteController->run()
+#8 C:\wamp64\www\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\wamp64\www\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\wamp64\www\bajtahack\index.php(13): CWebApplication->run()
+REQUEST_URI=/bajtahack/
+in C:\wamp64\www\bajtahack\protected\views\site\index.php (11)
+in C:\wamp64\www\bajtahack\protected\controllers\SiteController.php (32)
+in C:\wamp64\www\bajtahack\index.php (13)
+2017/11/25 15:13:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "site".' in C:\wamp64\www\framework\web\CController.php:486
+Stack trace:
+#0 C:\wamp64\www\framework\web\CController.php(270): CController->missingAction('site')
+#1 C:\wamp64\www\framework\web\CWebApplication.php(282): CController->run('site')
+#2 C:\wamp64\www\framework\web\CWebApplication.php(141): CWebApplication->runController('site/site/addDa...')
+#3 C:\wamp64\www\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\wamp64\www\bajtahack\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/bajtahack/index.php/site/site/addData
+HTTP_REFERER=http://localhost/bajtahack/index.php/site/index
+---
+2017/11/25 15:13:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "site".' in C:\wamp64\www\framework\web\CController.php:486
+Stack trace:
+#0 C:\wamp64\www\framework\web\CController.php(270): CController->missingAction('site')
+#1 C:\wamp64\www\framework\web\CWebApplication.php(282): CController->run('site')
+#2 C:\wamp64\www\framework\web\CWebApplication.php(141): CWebApplication->runController('site/site/addDa...')
+#3 C:\wamp64\www\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\wamp64\www\bajtahack\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/bajtahack/index.php/site/site/addData
+---
+2017/11/25 15:29:41 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\wamp64\www\framework\web\CController.php:337
+Stack trace:
+#0 C:\wamp64\www\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\wamp64\www\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#2 C:\wamp64\www\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 C:\wamp64\www\framework\web\CWebApplication.php(282): CController->run('addData')
+#4 C:\wamp64\www\framework\web\CWebApplication.php(141): CWebApplication->runController('site/addData/1/...')
+#5 C:\wamp64\www\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#6 C:\wamp64\www\bajtahack\index.php(13): CApplication->run()
+#7 {main}
+REQUEST_URI=/bajtahack/index.php/site/addData/1/2
+HTTP_REFERER=http://localhost/bajtahack/index.php/site/index
+---
+2017/11/25 15:29:44 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\wamp64\www\framework\web\CController.php:337
+Stack trace:
+#0 C:\wamp64\www\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\wamp64\www\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#2 C:\wamp64\www\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 C:\wamp64\www\framework\web\CWebApplication.php(282): CController->run('addData')
+#4 C:\wamp64\www\framework\web\CWebApplication.php(141): CWebApplication->runController('site/addData/1/...')
+#5 C:\wamp64\www\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#6 C:\wamp64\www\bajtahack\index.php(13): CApplication->run()
+#7 {main}
+REQUEST_URI=/bajtahack/index.php/site/addData/1/2
+HTTP_REFERER=http://localhost/bajtahack/index.php/site/index
+---
+2017/11/25 15:29:47 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\wamp64\www\framework\web\CController.php:337
+Stack trace:
+#0 C:\wamp64\www\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\wamp64\www\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#2 C:\wamp64\www\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 C:\wamp64\www\framework\web\CWebApplication.php(282): CController->run('addData')
+#4 C:\wamp64\www\framework\web\CWebApplication.php(141): CWebApplication->runController('site/addData/1/...')
+#5 C:\wamp64\www\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#6 C:\wamp64\www\bajtahack\index.php(13): CApplication->run()
+#7 {main}
+REQUEST_URI=/bajtahack/index.php/site/addData/1/2
+HTTP_REFERER=http://localhost/bajtahack/index.php/site/index
+---
+2017/11/25 15:30:18 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\wamp64\www\framework\web\CController.php:337
+Stack trace:
+#0 C:\wamp64\www\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\wamp64\www\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#2 C:\wamp64\www\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 C:\wamp64\www\framework\web\CWebApplication.php(282): CController->run('addData')
+#4 C:\wamp64\www\framework\web\CWebApplication.php(141): CWebApplication->runController('site/addData/1/...')
+#5 C:\wamp64\www\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#6 C:\wamp64\www\bajtahack\index.php(13): CApplication->run()
+#7 {main}
+REQUEST_URI=/bajtahack/index.php/site/addData/1/2
+HTTP_REFERER=http://localhost/bajtahack/index.php/site/index
+---
+2017/11/25 15:30:40 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\wamp64\www\framework\web\CController.php:337
+Stack trace:
+#0 C:\wamp64\www\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\wamp64\www\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#2 C:\wamp64\www\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 C:\wamp64\www\framework\web\CWebApplication.php(282): CController->run('addData')
+#4 C:\wamp64\www\framework\web\CWebApplication.php(141): CWebApplication->runController('site/addData/1/...')
+#5 C:\wamp64\www\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#6 C:\wamp64\www\bajtahack\index.php(13): CApplication->run()
+#7 {main}
+REQUEST_URI=/bajtahack/index.php/site/addData/1/2
+HTTP_REFERER=http://localhost/bajtahack/index.php/site/index
+---
+2017/11/25 15:31:49 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\wamp64\www\framework\web\CController.php:337
+Stack trace:
+#0 C:\wamp64\www\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\wamp64\www\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#2 C:\wamp64\www\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 C:\wamp64\www\framework\web\CWebApplication.php(282): CController->run('addData')
+#4 C:\wamp64\www\framework\web\CWebApplication.php(141): CWebApplication->runController('site/addData/1/...')
+#5 C:\wamp64\www\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#6 C:\wamp64\www\bajtahack\index.php(13): CApplication->run()
+#7 {main}
+REQUEST_URI=/bajtahack/index.php/site/addData/1/2
+HTTP_REFERER=http://localhost/bajtahack/index.php/site/index
+---
+2017/11/25 17:08:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "gii".' in C:\wamp64\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\wamp64\www\framework\web\CWebApplication.php(141): CWebApplication->runController('gii')
+#1 C:\wamp64\www\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\wamp64\www\bajtahack\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/bajtahack/index.php?r=gii
+---
+2017/11/25 18:12:37 [error] [exception.CException] exception 'CException' with message 'Property "Naprava.tip" is not defined.' in C:\wamp64\www\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\wamp64\www\framework\db\ar\CActiveRecord.php(145): CComponent->__get('tip')
+#1 C:\wamp64\www\framework\base\CComponent.php(614) : eval()'d code(1): CActiveRecord->__get('tip')
+#2 C:\wamp64\www\framework\base\CComponent.php(614): eval()
+#3 C:\wamp64\www\framework\zii\widgets\grid\CDataColumn.php(142): CComponent->evaluateExpression('$data->naprava-...', Array)
+#4 C:\wamp64\www\framework\zii\widgets\grid\CGridColumn.php(231): CDataColumn->getDataCellContent(0)
+#5 C:\wamp64\www\framework\zii\widgets\grid\CGridColumn.php(154): CGridColumn->renderDataCellContent(0, Object(Senzor))
+#6 C:\wamp64\www\framework\zii\widgets\grid\CGridView.php(639): CGridColumn->renderDataCell(0)
+#7 C:\wamp64\www\framework\zii\widgets\grid\CGridView.php(623): CGridView->renderDataCell(Object(CDataColumn), 0)
+#8 C:\wamp64\www\framework\zii\widgets\grid\CGridView.php(579): CGridView->renderTableRow(0)
+#9 C:\wamp64\www\framework\zii\widgets\grid\CGridView.php(489): CGridView->renderTableBody()
+#10 C:\wamp64\www\framework\zii\widgets\CBaseListView.php(181): CGridView->renderItems()
+#11 [internal function]: CBaseListView->renderSection(Array)
+#12 C:\wamp64\www\framework\zii\widgets\CBaseListView.php(164): preg_replace_callback('/{(\\w+)}/', Array, '{summary}\n{item...')
+#13 C:\wamp64\www\framework\zii\widgets\CBaseListView.php(149): CBaseListView->renderContent()
+#14 C:\wamp64\www\framework\web\CBaseController.php(182): CBaseListView->run()
+#15 C:\wamp64\www\bajtahack\protected\views\senzor\admin.php(59): CBaseController->widget('zii.widgets.gri...', Array)
+#16 C:\wamp64\www\framework\web\CBaseController.php(126): require('C:\\wamp64\\www\\b...')
+#17 C:\wamp64\www\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\wamp64\\www\\b...', Array, true)
+#18 C:\wamp64\www\framework\web\CController.php(872): CBaseController->renderFile('C:\\wamp64\\www\\b...', Array, true)
+#19 C:\wamp64\www\framework\web\CController.php(785): CController->renderPartial('admin', Array, true)
+#20 C:\wamp64\www\bajtahack\protected\controllers\SenzorController.php(143): CController->render('admin', Array)
+#21 C:\wamp64\www\framework\web\actions\CInlineAction.php(49): SenzorController->actionAdmin()
+#22 C:\wamp64\www\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#23 C:\wamp64\www\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#24 C:\wamp64\www\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#25 C:\wamp64\www\framework\web\CController.php(1148): CFilter->filter(Object(CFilterChain))
+#26 C:\wamp64\www\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#27 C:\wamp64\www\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#28 C:\wamp64\www\framework\web\CController.php(291): CFilterChain->run()
+#29 C:\wamp64\www\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#30 C:\wamp64\www\framework\web\CWebApplication.php(282): CController->run('admin')
+#31 C:\wamp64\www\framework\web\CWebApplication.php(141): CWebApplication->runController('senzor/admin')
+#32 C:\wamp64\www\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#33 C:\wamp64\www\bajtahack\index.php(13): CApplication->run()
+#34 {main}
+REQUEST_URI=/bajtahack/index.php?r=senzor/admin
+HTTP_REFERER=http://localhost/bajtahack/index.php?r=senzor/admin
+---
+2017/11/25 22:29:44 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY000]: General error: 1366 Incorrect string value: '\xC4\x8D je ...' for column 'POMEN' at row 1. The SQL statement executed was: INSERT INTO `pomen` (`ID`, `SENZOR_ID`, `POMEN`, `MIN_VREDNOST`, `MAX_VREDNOST`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4).
+in C:\wamp64\www\bajtahack\protected\controllers\PomenController.php (73)
+in C:\wamp64\www\bajtahack\index.php (13)
+2017/11/25 22:29:44 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY000]: General error: 1366 Incorrect string value: '\xC4\x8D je ...' for column 'POMEN' at row 1. The SQL statement executed was: INSERT INTO `pomen` (`ID`, `SENZOR_ID`, `POMEN`, `MIN_VREDNOST`, `MAX_VREDNOST`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4)' in C:\wamp64\www\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\wamp64\www\framework\db\ar\CActiveRecord.php(1083): CDbCommand->execute()
+#1 C:\wamp64\www\framework\db\ar\CActiveRecord.php(811): CActiveRecord->insert(NULL)
+#2 C:\wamp64\www\bajtahack\protected\controllers\PomenController.php(73): CActiveRecord->save()
+#3 C:\wamp64\www\framework\web\actions\CInlineAction.php(49): PomenController->actionCreate()
+#4 C:\wamp64\www\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\wamp64\www\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 C:\wamp64\www\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\wamp64\www\framework\web\CController.php(1148): CFilter->filter(Object(CFilterChain))
+#8 C:\wamp64\www\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\wamp64\www\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\wamp64\www\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\wamp64\www\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\wamp64\www\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\wamp64\www\framework\web\CWebApplication.php(141): CWebApplication->runController('pomen/create')
+#14 C:\wamp64\www\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 C:\wamp64\www\bajtahack\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/bajtahack/index.php?r=pomen/create
+HTTP_REFERER=http://localhost/bajtahack/index.php?r=pomen/create
+---
+2017/11/25 22:31:09 [warning] [application] Failed to set unsafe attribute "ID" of "Pomen".
+in C:\wamp64\www\bajtahack\protected\controllers\PomenController.php (72)
+in C:\wamp64\www\bajtahack\index.php (13)
+2017/11/25 22:31:09 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY000]: General error: 1366 Incorrect string value: '\xC4\x8D je ...' for column 'POMEN' at row 1. The SQL statement executed was: INSERT INTO `pomen` (`SENZOR_ID`, `POMEN`, `MIN_VREDNOST`, `MAX_VREDNOST`) VALUES (:yp0, :yp1, :yp2, :yp3).
+in C:\wamp64\www\bajtahack\protected\controllers\PomenController.php (73)
+in C:\wamp64\www\bajtahack\index.php (13)
+2017/11/25 22:31:09 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY000]: General error: 1366 Incorrect string value: '\xC4\x8D je ...' for column 'POMEN' at row 1. The SQL statement executed was: INSERT INTO `pomen` (`SENZOR_ID`, `POMEN`, `MIN_VREDNOST`, `MAX_VREDNOST`) VALUES (:yp0, :yp1, :yp2, :yp3)' in C:\wamp64\www\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\wamp64\www\framework\db\ar\CActiveRecord.php(1083): CDbCommand->execute()
+#1 C:\wamp64\www\framework\db\ar\CActiveRecord.php(811): CActiveRecord->insert(NULL)
+#2 C:\wamp64\www\bajtahack\protected\controllers\PomenController.php(73): CActiveRecord->save()
+#3 C:\wamp64\www\framework\web\actions\CInlineAction.php(49): PomenController->actionCreate()
+#4 C:\wamp64\www\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\wamp64\www\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 C:\wamp64\www\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\wamp64\www\framework\web\CController.php(1148): CFilter->filter(Object(CFilterChain))
+#8 C:\wamp64\www\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\wamp64\www\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\wamp64\www\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\wamp64\www\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\wamp64\www\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\wamp64\www\framework\web\CWebApplication.php(141): CWebApplication->runController('pomen/create')
+#14 C:\wamp64\www\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 C:\wamp64\www\bajtahack\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/bajtahack/index.php?r=pomen/create
+HTTP_REFERER=http://localhost/bajtahack/index.php?r=pomen/create
+---
+2017/11/25 22:31:49 [warning] [application] Failed to set unsafe attribute "ID" of "Pomen".
+in C:\wamp64\www\bajtahack\protected\controllers\PomenController.php (72)
+in C:\wamp64\www\bajtahack\index.php (13)
+2017/11/25 22:31:49 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY000]: General error: 1366 Incorrect string value: '\xC4\x8D je ...' for column 'POMEN' at row 1. The SQL statement executed was: INSERT INTO `pomen` (`SENZOR_ID`, `POMEN`, `MIN_VREDNOST`, `MAX_VREDNOST`) VALUES (:yp0, :yp1, :yp2, :yp3).
+in C:\wamp64\www\bajtahack\protected\controllers\PomenController.php (73)
+in C:\wamp64\www\bajtahack\index.php (13)
+2017/11/25 22:31:49 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY000]: General error: 1366 Incorrect string value: '\xC4\x8D je ...' for column 'POMEN' at row 1. The SQL statement executed was: INSERT INTO `pomen` (`SENZOR_ID`, `POMEN`, `MIN_VREDNOST`, `MAX_VREDNOST`) VALUES (:yp0, :yp1, :yp2, :yp3)' in C:\wamp64\www\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\wamp64\www\framework\db\ar\CActiveRecord.php(1083): CDbCommand->execute()
+#1 C:\wamp64\www\framework\db\ar\CActiveRecord.php(811): CActiveRecord->insert(NULL)
+#2 C:\wamp64\www\bajtahack\protected\controllers\PomenController.php(73): CActiveRecord->save()
+#3 C:\wamp64\www\framework\web\actions\CInlineAction.php(49): PomenController->actionCreate()
+#4 C:\wamp64\www\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\wamp64\www\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 C:\wamp64\www\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\wamp64\www\framework\web\CController.php(1148): CFilter->filter(Object(CFilterChain))
+#8 C:\wamp64\www\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\wamp64\www\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\wamp64\www\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\wamp64\www\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\wamp64\www\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\wamp64\www\framework\web\CWebApplication.php(141): CWebApplication->runController('pomen/create')
+#14 C:\wamp64\www\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 C:\wamp64\www\bajtahack\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/bajtahack/index.php?r=pomen/create
+HTTP_REFERER=http://localhost/bajtahack/index.php?r=pomen/create
+---
+2017/11/25 22:33:01 [warning] [application] Failed to set unsafe attribute "ID" of "Pomen".
+in C:\wamp64\www\bajtahack\protected\controllers\PomenController.php (72)
+in C:\wamp64\www\bajtahack\index.php (13)
+2017/11/26 00:22:40 [warning] [application] Failed to set unsafe attribute "ID" of "Meritev".
+in C:\wamp64\www\bajtahack\protected\controllers\MeritevController.php (72)
+in C:\wamp64\www\bajtahack\index.php (13)
+2017/11/26 00:23:06 [warning] [application] Failed to set unsafe attribute "ID" of "Meritev".
+in C:\wamp64\www\bajtahack\protected\controllers\MeritevController.php (72)
+in C:\wamp64\www\bajtahack\index.php (13)
+2017/11/26 00:23:06 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: '' for column 'CREATED' at row 1. The SQL statement executed was: INSERT INTO `meritev` (`SENZOR_ID`, `VALUE`, `CREATED`) VALUES (:yp0, :yp1, :yp2).
+in C:\wamp64\www\bajtahack\protected\controllers\MeritevController.php (73)
+in C:\wamp64\www\bajtahack\index.php (13)
+2017/11/26 00:23:06 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: '' for column 'CREATED' at row 1. The SQL statement executed was: INSERT INTO `meritev` (`SENZOR_ID`, `VALUE`, `CREATED`) VALUES (:yp0, :yp1, :yp2)' in C:\wamp64\www\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\wamp64\www\framework\db\ar\CActiveRecord.php(1083): CDbCommand->execute()
+#1 C:\wamp64\www\framework\db\ar\CActiveRecord.php(811): CActiveRecord->insert(NULL)
+#2 C:\wamp64\www\bajtahack\protected\controllers\MeritevController.php(73): CActiveRecord->save()
+#3 C:\wamp64\www\framework\web\actions\CInlineAction.php(49): MeritevController->actionCreate()
+#4 C:\wamp64\www\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\wamp64\www\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 C:\wamp64\www\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\wamp64\www\framework\web\CController.php(1148): CFilter->filter(Object(CFilterChain))
+#8 C:\wamp64\www\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\wamp64\www\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\wamp64\www\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\wamp64\www\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\wamp64\www\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\wamp64\www\framework\web\CWebApplication.php(141): CWebApplication->runController('meritev/create')
+#14 C:\wamp64\www\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 C:\wamp64\www\bajtahack\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/bajtahack/index.php?r=meritev/create
+HTTP_REFERER=http://localhost/bajtahack/index.php?r=meritev/create
+---
+2017/11/26 00:24:11 [warning] [application] Failed to set unsafe attribute "ID" of "Meritev".
+in C:\wamp64\www\bajtahack\protected\controllers\MeritevController.php (72)
+in C:\wamp64\www\bajtahack\index.php (13)
+2017/11/26 00:25:09 [error] [exception.CException] exception 'CException' with message 'Property "Meritev.senzor" is not defined.' in C:\wamp64\www\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\wamp64\www\framework\db\ar\CActiveRecord.php(145): CComponent->__get('senzor')
+#1 C:\wamp64\www\framework\base\CComponent.php(614) : eval()'d code(1): CActiveRecord->__get('senzor')
+#2 C:\wamp64\www\framework\base\CComponent.php(614): eval()
+#3 C:\wamp64\www\framework\zii\widgets\grid\CDataColumn.php(142): CComponent->evaluateExpression('$data->senzor->...', Array)
+#4 C:\wamp64\www\framework\zii\widgets\grid\CGridColumn.php(231): CDataColumn->getDataCellContent(0)
+#5 C:\wamp64\www\framework\zii\widgets\grid\CGridColumn.php(154): CGridColumn->renderDataCellContent(0, Object(Meritev))
+#6 C:\wamp64\www\framework\zii\widgets\grid\CGridView.php(639): CGridColumn->renderDataCell(0)
+#7 C:\wamp64\www\framework\zii\widgets\grid\CGridView.php(623): CGridView->renderDataCell(Object(CDataColumn), 0)
+#8 C:\wamp64\www\framework\zii\widgets\grid\CGridView.php(579): CGridView->renderTableRow(0)
+#9 C:\wamp64\www\framework\zii\widgets\grid\CGridView.php(489): CGridView->renderTableBody()
+#10 C:\wamp64\www\framework\zii\widgets\CBaseListView.php(181): CGridView->renderItems()
+#11 [internal function]: CBaseListView->renderSection(Array)
+#12 C:\wamp64\www\framework\zii\widgets\CBaseListView.php(164): preg_replace_callback('/{(\\w+)}/', Array, '{summary}\n{item...')
+#13 C:\wamp64\www\framework\zii\widgets\CBaseListView.php(149): CBaseListView->renderContent()
+#14 C:\wamp64\www\framework\web\CBaseController.php(182): CBaseListView->run()
+#15 C:\wamp64\www\bajtahack\protected\views\meritev\admin.php(53): CBaseController->widget('zii.widgets.gri...', Array)
+#16 C:\wamp64\www\framework\web\CBaseController.php(126): require('C:\\wamp64\\www\\b...')
+#17 C:\wamp64\www\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\wamp64\\www\\b...', Array, true)
+#18 C:\wamp64\www\framework\web\CController.php(872): CBaseController->renderFile('C:\\wamp64\\www\\b...', Array, true)
+#19 C:\wamp64\www\framework\web\CController.php(785): CController->renderPartial('admin', Array, true)
+#20 C:\wamp64\www\bajtahack\protected\controllers\MeritevController.php(144): CController->render('admin', Array)
+#21 C:\wamp64\www\framework\web\actions\CInlineAction.php(49): MeritevController->actionAdmin()
+#22 C:\wamp64\www\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#23 C:\wamp64\www\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#24 C:\wamp64\www\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#25 C:\wamp64\www\framework\web\CController.php(1148): CFilter->filter(Object(CFilterChain))
+#26 C:\wamp64\www\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#27 C:\wamp64\www\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#28 C:\wamp64\www\framework\web\CController.php(291): CFilterChain->run()
+#29 C:\wamp64\www\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#30 C:\wamp64\www\framework\web\CWebApplication.php(282): CController->run('admin')
+#31 C:\wamp64\www\framework\web\CWebApplication.php(141): CWebApplication->runController('meritev/admin')
+#32 C:\wamp64\www\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#33 C:\wamp64\www\bajtahack\index.php(13): CApplication->run()
+#34 {main}
+REQUEST_URI=/bajtahack/index.php?r=meritev/admin
+HTTP_REFERER=http://localhost/bajtahack/index.php?r=meritev/view&id=1
+---
+2017/11/26 01:12:25 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'DATUM' in 'order clause'. The SQL statement executed was: SELECT * FROM `meritev` `t` ORDER BY DATUM ASC.
+in C:\wamp64\www\bajtahack\protected\views\site\statistika.php (8)
+in C:\wamp64\www\bajtahack\protected\controllers\SiteController.php (44)
+in C:\wamp64\www\bajtahack\index.php (13)
+2017/11/26 01:12:25 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'DATUM' in 'order clause'. The SQL statement executed was: SELECT * FROM `meritev` `t` ORDER BY DATUM ASC' in C:\wamp64\www\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\wamp64\www\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\wamp64\www\framework\db\ar\CActiveRecord.php(1359): CDbCommand->queryAll()
+#2 C:\wamp64\www\framework\db\ar\CActiveRecord.php(1478): CActiveRecord->query(Object(CDbCriteria), true)
+#3 C:\wamp64\www\bajtahack\protected\views\site\statistika.php(8): CActiveRecord->findAll(Array)
+#4 C:\wamp64\www\framework\web\CBaseController.php(126): require('C:\\wamp64\\www\\b...')
+#5 C:\wamp64\www\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\wamp64\\www\\b...', NULL, true)
+#6 C:\wamp64\www\framework\web\CController.php(872): CBaseController->renderFile('C:\\wamp64\\www\\b...', NULL, true)
+#7 C:\wamp64\www\framework\web\CController.php(785): CController->renderPartial('statistika', NULL, true)
+#8 C:\wamp64\www\bajtahack\protected\controllers\SiteController.php(44): CController->render('statistika')
+#9 C:\wamp64\www\framework\web\actions\CInlineAction.php(49): SiteController->actionStatistika()
+#10 C:\wamp64\www\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\wamp64\www\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 C:\wamp64\www\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\wamp64\www\framework\web\CWebApplication.php(282): CController->run('statistika')
+#14 C:\wamp64\www\framework\web\CWebApplication.php(141): CWebApplication->runController('site/statistika')
+#15 C:\wamp64\www\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#16 C:\wamp64\www\bajtahack\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/bajtahack/index.php?r=site/statistika
+HTTP_REFERER=http://localhost/bajtahack/index.php?r=site/pregled
+---
+2017/11/26 07:50:26 [error] [exception.CException] exception 'CException' with message 'Property "Naprava.DATA" is not defined.' in C:\wamp64\www\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\wamp64\www\framework\db\ar\CActiveRecord.php(145): CComponent->__get('DATA')
+#1 C:\wamp64\www\bajtahack\protected\views\site\pregled.php(69): CActiveRecord->__get('DATA')
+#2 C:\wamp64\www\framework\web\CBaseController.php(126): require('C:\\wamp64\\www\\b...')
+#3 C:\wamp64\www\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\wamp64\\www\\b...', NULL, true)
+#4 C:\wamp64\www\framework\web\CController.php(872): CBaseController->renderFile('C:\\wamp64\\www\\b...', NULL, true)
+#5 C:\wamp64\www\framework\web\CController.php(785): CController->renderPartial('pregled', NULL, true)
+#6 C:\wamp64\www\bajtahack\protected\controllers\SiteController.php(51): CController->render('pregled')
+#7 C:\wamp64\www\framework\web\actions\CInlineAction.php(49): SiteController->actionPregled()
+#8 C:\wamp64\www\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\wamp64\www\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#10 C:\wamp64\www\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\wamp64\www\framework\web\CWebApplication.php(282): CController->run('pregled')
+#12 C:\wamp64\www\framework\web\CWebApplication.php(141): CWebApplication->runController('site/pregled')
+#13 C:\wamp64\www\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#14 C:\wamp64\www\bajtahack\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/bajtahack/index.php?r=site/pregled
+HTTP_REFERER=http://localhost/bajtahack/index.php?r=site/pregled
+---
+2017/11/26 07:50:39 [error] [exception.CException] exception 'CException' with message 'Property "Naprava.tip" is not defined.' in C:\wamp64\www\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\wamp64\www\framework\db\ar\CActiveRecord.php(145): CComponent->__get('tip')
+#1 C:\wamp64\www\bajtahack\protected\views\site\pregled.php(69): CActiveRecord->__get('tip')
+#2 C:\wamp64\www\framework\web\CBaseController.php(126): require('C:\\wamp64\\www\\b...')
+#3 C:\wamp64\www\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\wamp64\\www\\b...', NULL, true)
+#4 C:\wamp64\www\framework\web\CController.php(872): CBaseController->renderFile('C:\\wamp64\\www\\b...', NULL, true)
+#5 C:\wamp64\www\framework\web\CController.php(785): CController->renderPartial('pregled', NULL, true)
+#6 C:\wamp64\www\bajtahack\protected\controllers\SiteController.php(51): CController->render('pregled')
+#7 C:\wamp64\www\framework\web\actions\CInlineAction.php(49): SiteController->actionPregled()
+#8 C:\wamp64\www\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\wamp64\www\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#10 C:\wamp64\www\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\wamp64\www\framework\web\CWebApplication.php(282): CController->run('pregled')
+#12 C:\wamp64\www\framework\web\CWebApplication.php(141): CWebApplication->runController('site/pregled')
+#13 C:\wamp64\www\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#14 C:\wamp64\www\bajtahack\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/bajtahack/index.php?r=site/pregled
+HTTP_REFERER=http://localhost/bajtahack/index.php?r=site/pregled
+---
+2017/11/26 07:51:09 [error] [php] Trying to get property of non-object (C:\wamp64\www\bajtahack\protected\views\site\pregled.php:69)
+Stack trace:
+#0 C:\wamp64\www\framework\web\CController.php(872): SiteController->renderFile()
+#1 C:\wamp64\www\framework\web\CController.php(785): SiteController->renderPartial()
+#2 C:\wamp64\www\bajtahack\protected\controllers\SiteController.php(51): SiteController->render()
+#3 C:\wamp64\www\framework\web\actions\CInlineAction.php(49): SiteController->actionPregled()
+#4 C:\wamp64\www\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\wamp64\www\framework\web\CController.php(286): SiteController->runAction()
+#6 C:\wamp64\www\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#7 C:\wamp64\www\framework\web\CWebApplication.php(282): SiteController->run()
+#8 C:\wamp64\www\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\wamp64\www\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\wamp64\www\bajtahack\index.php(13): CWebApplication->run()
+REQUEST_URI=/bajtahack/index.php?r=site/pregled
+in C:\wamp64\www\bajtahack\protected\views\site\pregled.php (69)
+in C:\wamp64\www\bajtahack\protected\controllers\SiteController.php (51)
+in C:\wamp64\www\bajtahack\index.php (13)
+2017/11/26 07:57:03 [error] [php] Trying to get property of non-object (C:\wamp64\www\bajtahack\protected\views\site\pregled.php:61)
+Stack trace:
+#0 C:\wamp64\www\framework\web\CController.php(872): SiteController->renderFile()
+#1 C:\wamp64\www\framework\web\CController.php(785): SiteController->renderPartial()
+#2 C:\wamp64\www\bajtahack\protected\controllers\SiteController.php(51): SiteController->render()
+#3 C:\wamp64\www\framework\web\actions\CInlineAction.php(49): SiteController->actionPregled()
+#4 C:\wamp64\www\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\wamp64\www\framework\web\CController.php(286): SiteController->runAction()
+#6 C:\wamp64\www\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#7 C:\wamp64\www\framework\web\CWebApplication.php(282): SiteController->run()
+#8 C:\wamp64\www\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\wamp64\www\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\wamp64\www\bajtahack\index.php(13): CWebApplication->run()
+REQUEST_URI=/bajtahack/index.php?r=site/pregled
+in C:\wamp64\www\bajtahack\protected\views\site\pregled.php (61)
+in C:\wamp64\www\bajtahack\protected\controllers\SiteController.php (51)
+in C:\wamp64\www\bajtahack\index.php (13)
+2017/11/26 07:57:58 [error] [php] Object of class Tip could not be converted to string (C:\wamp64\www\bajtahack\protected\views\site\pregled.php:69)
+Stack trace:
+#0 C:\wamp64\www\framework\web\CController.php(872): SiteController->renderFile()
+#1 C:\wamp64\www\framework\web\CController.php(785): SiteController->renderPartial()
+#2 C:\wamp64\www\bajtahack\protected\controllers\SiteController.php(51): SiteController->render()
+#3 C:\wamp64\www\framework\web\actions\CInlineAction.php(49): SiteController->actionPregled()
+#4 C:\wamp64\www\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\wamp64\www\framework\web\CController.php(286): SiteController->runAction()
+#6 C:\wamp64\www\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#7 C:\wamp64\www\framework\web\CWebApplication.php(282): SiteController->run()
+#8 C:\wamp64\www\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\wamp64\www\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\wamp64\www\bajtahack\index.php(13): CWebApplication->run()
+REQUEST_URI=/bajtahack/index.php?r=site/pregled
+in C:\wamp64\www\bajtahack\protected\views\site\pregled.php (69)
+in C:\wamp64\www\bajtahack\protected\controllers\SiteController.php (51)
+in C:\wamp64\www\bajtahack\index.php (13)
