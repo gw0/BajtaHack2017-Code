@@ -1,0 +1,7 @@
+--drop table if exists measurements;
+--create table measurements (
+--  temperature null,
+--  humidity null,
+--  luminosity null,
+--  Timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
+--);

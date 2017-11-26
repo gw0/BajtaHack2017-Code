@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block body %}
+  <h2>Vpis</h2>
+  {% if error %}<p class="error"><strong>Error:</strong>
+  {{ error }}{% endif %}
+  <form action="{{ url_for('login') }}" method="post">
+    <dl>
+      <dt>Uporabnisko ime:
+      <dd><input type="text" name="username">
+      <dt>Geslo:
+      <dd><input type="password" name="password">
+      <dd><input type="submit" value="Login">
+    </dl>
+  </form>
+{% endblock %}

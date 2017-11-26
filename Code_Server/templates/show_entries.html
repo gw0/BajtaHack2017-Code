@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% block body %}
+  {% if session.logged_in %}
+    <form class="form" action="{{ url_for('add_entry') }}" method="post" class="add-entry">
+      <dl>
+        <dt>Vnesite stevilko kravice:
+        <dd><input type="text" size="30" name="cowID">
+        <dd><input type="submit" value="Vnesi">
+      </dl>
+    </form>
+  {% endif %}
+  <ul class="entries">
+  {% for entry in entries %}
+      <li><h2>{{ entry.cowID }}</h2></li>
+    <form class="form_delete" action="http://127.0.0.1:5000/show_measurements"
+            method="get" class="add-entry">
+        <button class="cowID" name="cowID"
+                type="submit" value="{{ entry.cowID }}" >
+          Poglej podatke</button>
+      </form>
+
+      <form class="form_delete" action="{{ url_for('remove_entry') }}"
+            method="post" class="add-entry">
+        <button class="cowID_delete" name="cowID_delete"
+                type="submit" value="{{ entry.cowID }}" >
+          Izbrisite stevilko kravice!</button>
+      </form>
+
+  {% else %}
+    <li><em>Ni vnosa.</em></li>
+  {% endfor %}
+  </ul>
+{% endblock %}

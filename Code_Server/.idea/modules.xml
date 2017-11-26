@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../../BAJTA/PythonExample01/BajtaHack/.idea/BajtaHack.iml" filepath="$PROJECT_DIR$/../../BAJTA/PythonExample01/BajtaHack/.idea/BajtaHack.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Code_Recognition/.idea/Projekt_Prepoznavanje.iml" filepath="$PROJECT_DIR$/../Code_Recognition/.idea/Projekt_Prepoznavanje.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Projekt_Server.iml" filepath="$PROJECT_DIR$/.idea/Projekt_Server.iml" />
+    </modules>
+  </component>
+</project>
