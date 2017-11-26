@@ -177,11 +177,19 @@ LUX = srmlib.SRMClient(
     verbose=VERBOSE)
 
 
+def get_light_status():
+    return 1 - int(LIGHT.get().content)
+
+
+def get_pir_status():
+    return int(PIR.get().content)
+
+
 print("\nWorking...")
 lux_avg = -1  # pylint: disable=invalid-name
 while True:
-    LIGHT_GET = 1 - int(LIGHT.get().content)
-    PIR_GET = int(PIR.get().content)
+    LIGHT_GET = get_light_status()
+    PIR_GET = get_pir_status()
 
     # Lux (WIP)
     LUX_ENABLE = ('"' +
