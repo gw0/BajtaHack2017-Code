@@ -10,7 +10,7 @@ Assuming an Arch Linux installation, the following packages are required
 * php (ver. 7)
 * php-apache
 * mariadb
-* [yii framework](http://www.yiiframework.com/)
+* [yii framework](http://www.yiiframework.com/) (Version 1.1)
 
 Configure the packages according to the Arch wiki documentation.
 
