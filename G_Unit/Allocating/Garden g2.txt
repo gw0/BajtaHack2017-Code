@@ -1,0 +1,36 @@
+https://g2.srm.bajtahack.si:24200
+
+/** Garden g2 */
+
+/* init lucke */
+POST('https://g2.srm.bajtahack.si:24200/phy/gpio/alloc', '17')
+POST('https://g2.srm.bajtahack.si:24200/phy/gpio/alloc', '27')
+POST('https://g2.srm.bajtahack.si:24200/phy/gpio/alloc', '26')
+PUT('https://g2.srm.bajtahack.si:24200/phy/gpio/17/cfg/value', '{"dir":"out","mode":"floating","irq":"none","debouncing":0}')
+PUT('https://g2.srm.bajtahack.si:24200/phy/gpio/26/cfg/value', '{"dir":"out","mode":"floating","irq":"none","debouncing":0}')
+PUT('https://g2.srm.bajtahack.si:24200/phy/gpio/27/cfg/value', '{"dir":"out","mode":"floating","irq":"none","debouncing":0}'))
+
+POST('https://g2.srm.bajtahack.si:24200/phy/i2c/alloc', '1')
+
+/* init temperatura*/
+POST('https://g2.srm.bajtahack.si:24200/phy/i2c/1/slaves/alloc', '64')
+PUT('https://g2.srm.bajtahack.si:24200/phy/i2c/1/slaves/64/datasize/value', '2')
+
+/* init co */
+POST('https://g2.srm.bajtahack.si:24200/phy/i2c/1/slaves/alloc', '72')
+PUT('https://g2.srm.bajtahack.si:24200/phy/i2c/1/slaves/72/datasize/value', '2')
+
+/* init temperatura led */
+
+POST('https://g2.srm.bajtahack.si:24200/phy/gpio/alloc', '27')
+PUT('https://g2.srm.bajtahack.si:24200/phy/gpio/27/cfg/value', '{"dir":"out","mode":"floating","irq":"none","debouncing":0}')
+
+POST('https://g2.srm.bajtahack.si:24200/log/operator/alloc', '0')
+PUT('https://g2.srm.bajtahack.si:24200/log/operator/0/cfg/value', '{"op_type":"and","a_src":"link","b_src":"link","a_const":"","b_const":""}')
+PUT('https://g2.srm.bajtahack.si:24200/log/operator/0/links/op_a/value', '/phy/gpio/27/value')
+PUT('https://g2.srm.bajtahack.si:24200/log/operator/0/links/op_b/value', '/phy/gpio/16/value')
+PUT('https://g2.srm.bajtahack.si:24200/log/operator/0/links/out/value', '/phy/gpio/27/value')
+POST('https://g2.srm.bajtahack.si:24200/log/timer/alloc', 't1')
+PUT('https://g2.srm.bajtahack.si:24200/log/timer/t1/cfg/value', '{"period": 10000}')
+POST('https://g2.srm.bajtahack.si:24200/log/timer/t1/notify', '{"url":"/log/operator/0/value"}')
+PUT('https://g2.srm.bajtahack.si:24200/log/timer/t1/value', '1')
