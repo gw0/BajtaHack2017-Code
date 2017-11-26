@@ -1,0 +1,36 @@
+{% include 'header.html' %}
+
+
+            <div class="data_tabela">
+                <h1> Stanje v hladilniku </h1>
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>ime</th>
+                            <th>kdaj se pokvari</th>
+                            <th>alergeni </th>
+                        </tr>
+                        {% for izdelek in izdelkilist %}
+
+                          <tr>
+                              <td><a href="../item?id={{ izdelek.fid }}" >{{ izdelek.name }}</a></td>
+    <td>{{ izdelek.datum }}</td>
+    <td>{{ izdelek.info }}</td>
+  </tr>
+
+                    
+
+                        {% endfor %}
+
+                    </tbody>
+                </table>
+
+            </div>
+
+
+            
+        </div>
+
+
+       
+{% include 'footer.html' %}

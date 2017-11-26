@@ -1,0 +1,53 @@
+{% include 'header.html' %}
+
+<div>
+	<img class="item" src="static/img/{{ odgovor.id }}.png">
+
+	<div class="item_data">
+		<h1>{{ odgovor.name }}</h1>
+	</div>
+	<hr>
+	<div class="item_data">
+		<h2>Alergeni</h2>
+		<p> {{ odgovor.alergeni }} </p>
+		<h2> Hranilna Vrednost </h2>
+		<p> {{ odgovor.hranljivost }} </p>
+		{% if odgovor.v_hlad %}
+		<h2> Porabiti do:</h2>
+		<p> {{ odgovor.rok_trajanja }}</p>
+		{% endif %}
+	</div>
+
+	<table class="dodaj">
+		<tr><td><img src="static/img/dodaj.png" id="plus"></td>
+		<td>
+		{% if odgovor.v_hlad %}
+		<img src="static/img/odstrani.png" id="minus">
+		{% else %}
+		<img src="static/img/odstrani_siv.png">
+		{% endif %}
+
+		</td> </tr>
+	</table>
+
+</div>
+
+<script type="text/javascript">
+	$('#plus').click(function(){
+		$.get('api/add_item?id=' + {{ odgovor.id }},null);
+		window.location = "/hladilnik";
+	});
+
+	$('#minus').click(function(){
+		$.get('api/remove_item?id=' + {{ odgovor.id }},null);
+		window.location = "/hladilnik";
+	})
+
+</script>
+
+
+
+
+<!-- ona je -->
+    
+{% include 'footer.html' %}

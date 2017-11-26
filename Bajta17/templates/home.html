@@ -1,0 +1,29 @@
+{% include 'header.html' %}
+
+    <div class="user">
+        <h3> Pozdravljen, {{ odgovor.firstname }} {{ odgovor.lastname }} <i class="fa fa-user" aria-hidden="true"></i></h3>
+
+    </div>
+    <div class="home">
+    <hr>
+
+
+        <a href="hladilnik" ><h3> Poglej v hladilnik </h3></a>
+        
+        <a href="recepti" ><h3> Kaj bi jedel danes </h3></a>
+
+        <a href="shopinglist" ><h3> Nakupovalni listić </h3></a>
+
+    {% for izdelek in hranalist %}
+
+
+                            <tr>
+                                <td><a href="../item?id={{ izdelek.fid }}">{{ izdelek.name }}</a></td>
+                                <td>{{ izdelek.datum }}</td>
+                                <td>{{ izdelek.info }}</td>
+                            </tr>
+        {% endfor %}
+
+    </div>
+       
+{% include 'footer.html' %}

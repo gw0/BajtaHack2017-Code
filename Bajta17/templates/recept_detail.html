@@ -1,0 +1,30 @@
+{% include 'header.html' %}
+
+<div>
+	<img class="item" src="static/img/{{ recept.ime }}.png">
+
+	<div class="item_data">
+		<h1>{{ recept.ime }}</h1> <a href="/add_recepie_shoping"> <i class="fa fa-shopping-basket fa-5x" aria-hidden="true"></i></a>
+	</div>
+	<hr>
+	<div class="item_data">
+		<h2>Alergeni</h2>
+		<p> {{ recept.alergeni }} </p>
+		<h2>Sestavine</h2>
+			<p> {{ recept.sest1 }} </p>
+			<p> {{ recept.sest2 }} </p>
+			<p> {{ recept.sest3 }} </p>
+			<p> {{ recept.sest4 }} </p>
+		<h2>Postopek</h2>
+			<p> {{ recept.recept }} </p>
+
+	</div>
+</div>
+
+
+
+
+
+<!-- ona je -->
+    
+{% include 'footer.html' %}

@@ -1,0 +1,4 @@
+list:	fa-list-ul [&#xf0ca;]
+check-out:	fa-sign-out [&#xf08b;]
+check-in:	fa-sign-in [&#xf090;]
+recepti:	https://www.iconfinder.com/icons/171456/dinner_eat_food_icon#size=128

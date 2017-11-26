@@ -1,0 +1,48 @@
+{% include 'header.html' %}
+
+
+            <div class="data_tabela">
+                <h1> Nakupovalni Listič </h1>
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>kupim njo</th>
+                            <th>ime_izdelka</th>
+                            <th>kolicina</th>
+                        </tr>
+                        {% for izdelek in hranalist %}
+
+                          <tr>
+                              <td><i id="kosara" burek="{{ izdelek.fid }}" class="fa fa-shopping-basket" aria-hidden="true"></i></td>
+
+                              <td><a href="../item?id={{ izdelek.fid }}" >{{ izdelek.name }}</a></td>
+                              <td>{{ izdelek.kolicina }}</td>
+                          </tr>
+
+
+
+                        {% endfor %}
+
+                    </tbody>
+                </table>
+
+             </div>
+
+
+            
+        </div>
+
+        <script type="text/javascript">
+            $('#kosara').click(function(){
+                console.log("klik je");
+                var neki = $(this).attr("burek");
+                $.get('api/add_item?id=' + neki,null);
+                $(this).closest('tr').toggleClass('hide');
+            });
+
+            
+        </script>
+
+
+       
+{% include 'footer.html' %}
