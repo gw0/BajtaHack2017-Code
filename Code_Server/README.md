@@ -4,24 +4,28 @@
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
-
-```
-Give examples
-```
+Python 2.7.12 |Anaconda 4.2.0 
+google drive slike
+Raspberry Pi Orange
+u-blox SRM modfule
 
 ### Installing
+* Connect Rasberry Pi with u-blox SRM module. 
+* Remove firewall over SSH:
 
-
-
+```
+sudo rm /etc/iptables/*
+sudo reboot
+```
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Krivec Tadej** - [PurpleBooth](https://github.com/tadejkrivec)
+* **Krivec Tadej** - [PurpleBooth](https://github.com/mihagazvoda)
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
