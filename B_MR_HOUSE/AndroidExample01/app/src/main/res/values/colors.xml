@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#005999</color><!-- Ublox Corporate red -->
+    <color name="colorPrimaryDark">#171718</color><!-- Ublox black -->
+    <color name="colorAccent">#005595</color><!-- Ublox Color 3 dark blue -->
+    <color name="colorBorder">#63646b</color><!-- Ublox Corporate grey -->
+
+    <color name="setup_color">#63646b</color><!-- Ublox Corporate grey -->
+    <color name="led_color">#C8751B</color>!-- Ublox Color 4 orange -->
+    <color name="led3_color">#74B12C</color>
+    <color name="temp_color">#C8751B</color>
+    <color name="led2_color">#005595</color>
+    <color name="button_color">#74B12C</color><!-- Ublox Color 5 green -->
+    <color name="buzzer_color">#005595</color><!-- Ublox Color 3 dark blue -->
+</resources>
