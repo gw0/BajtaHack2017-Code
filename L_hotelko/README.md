@@ -1,0 +1,3 @@
+# bajtahack
+tekomvanje bajtahack
+jože

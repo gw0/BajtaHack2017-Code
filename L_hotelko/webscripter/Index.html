@@ -1,0 +1,168 @@
+﻿<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="menu_nav.css">
+		<link rel="stylesheet" type="text/css" href="Meni.css">
+		<link rel="stylesheet" type="text/css" href="Side_menu_Blender.css">
+		<link rel="stylesheet" type="text/css" href="CSS_base.css">
+		<link rel="stylesheet" type="text/css" href="CSS_Footer.css">
+		<style>
+
+
+		</style>
+	</head>
+	<body>
+		<header>
+		<!--Header-->
+
+		</div>
+		<!--Konc Header-->
+		</header>
+
+		<br>
+		<div Class="Wrapper">
+		<!--Side menu-->
+			<div id="Side_Menu_Width">
+
+			<!--Menu 1-->
+			<div Class="Side_menu">
+				<input  style="visibility: hidden; position:absolute;" type="checkbox" value="None" id="test1" name="check"/>
+			<label id="label1" for="test1"></label>
+			<div id="test">
+			Global
+			</div>
+			<div id="DropDown">
+			<ul class="List">
+				<!--<li><a href="Blender_ViewPort.html">Viewport - Pogled</a></li>
+				<li><a href="Blender_Outliner.html">Outliner</a></li>
+				<li><a href="Blender_ToolBar.html">Tool bar</a></li>
+				<li><a href="#">Properties</a></li>
+				<li><a href="#">Timeline</a></li>-->
+				<li>device:<input id="device" type="text" name="device"  value="L1"><br/>//L1, L2...</li>
+				<li> <br/> </li>
+	      <li>Service:<input id="service" type="text" name="service"  value="00"><br/>//24, 27..</li>
+				<li> <br/> </li>
+	      <li>Type:<input id="type" type="text" name="type"  value="00"><br/>//luc=LED, MOTION(pir), voda..</li>
+
+			</ul>
+
+			</div>
+
+			<!--Menu 2-->
+			<input  style="visibility: hidden; position:absolute;" type="checkbox" value="None" id="Menu2" name="check"/>
+			<label id="label2" for="Menu2"></label>
+			<div id="test2">
+			CREATE BUTTON OR SENSOR
+			</div>
+			<div id="DropDown2">
+			<ul class="List">
+				<li>IntigerName:<input id="intname" type="text" name="intname"  value="old_">//old_....</li>
+	      <li>OperationName:<input id="opname" type="text" name="opname"  value="op_">//op_....</li>
+	      <li>TimerName:<input id="timename" type="text" name="timename"  value="timer_">//timer_....</li>
+
+
+	      <li>InOut:<input id="inout" type="text" name="InOut"  value="in"> <p>//in, out</li>
+	      <li>PressMode:<input id="pressmode" type="text" name="PressMode"  value="pullup">//pullup, pulldown, floating</li>
+	      <li>TimePeriod:<input id="period" type="text" name="period"  value="3000"></li>
+	      <li>TimeStardDelay:<input id="timeStardDelay" type="text" name="delay"  value="35000"></li>
+				<button id="ustvariGumb">Create gumb!</button>
+
+			</ul>
+			</div>
+
+			<!--Menu 3-->
+			<input  style="visibility: hidden; position:absolute;" type="checkbox" value="None" id="Menu3" name="check"/>
+			<label id="label3" for="Menu3"></label>
+			<div id="test3">
+			CREATE LED
+			</div>
+			<div id="DropDown3">
+			<ul class="List">
+				<p>We need Device, service and type</p>
+				<button id="ustvariLED">Create LED!</button>
+
+			</ul>
+			</div>
+
+
+			<!--Menu 4-->
+			<input  style="visibility: hidden; position:absolute;" type="checkbox" value="None" id="Menu4" name="check"/>
+			<label id="label4" for="Menu4"></label>
+			<div id="test4">
+			CREATE INIT
+			</div>
+			<div id="DropDown4">
+			<ul class="List">
+				<p>serverTimer:</p><input id="serverTimer" type="text" name="InOut"  value="in"> <p>//in, out</p>
+
+				<button id="init">Create Init file!</button>
+
+			</ul>
+			</div>
+
+
+			</div>
+			</div>
+		<!--Konec Side menu-->
+		<div Class="Main" align="center">
+		</div>
+		<textarea id="script_output" style="float:right; height:70%; width:40%; position:relative;"></textarea>
+
+		</div>
+		<script
+				src="https://code.jquery.com/jquery-3.2.1.min.js"
+				integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+				crossorigin="anonymous"></script>
+		<script>
+
+			$(function(){
+
+					$("#ustvariGumb").on("click", function(){
+						$("#script_output").val(
+							"POST('/phy/gpio/alloc', \"" + $("#service").val() + "')\n" +
+							"PUT('/phy/gpio/" + $("#service").val() + "/cfg/value', '{\"dir\":\""+ $("#inout").val() +"\",\"mode\":\"" + $("#pressmode").val() + "\",\"irq\":\"none\",\"debouncing\":0}')\n"
+							+
+							"POST('/log/integer/alloc', '"+ $("#intname").val() + $("#service").val() + "')\n" +
+							"POST('/log/operator/alloc', '"+ $("#opname").val()+ $("#service").val() +"')\n" +
+							"PUT('/log/operator/"+ $("#opname").val()+$("#service").val()+"/cfg/value', '{\"op_type\":\"xor\",\"a_src\":\"link\",\"b_src\":\"link\",\"a_const\":\"\",\"b_const\":\"\"} ')\n" +
+							"PUT('/log/operator/"+ $("#opname").val()+$("#service").val()+"/links/op_a/value', '/phy/gpio/"+$("#service").val()+"/value')\n"+
+							"PUT('/log/operator/"+ $("#opname").val()+$("#service").val()+"/links/op_b/value', '/log/integer/"+$("#intname").val()+$("#service").val()+"/value')\n" +
+							"PUT('/log/operator/"+ $("#opname").val()+$("#service").val()+"/links/out/value', 'http://192.168.1.8:8080/bajtahack/notify?device="+$("#device").val()+"&service="+$("#service").val()+"&type="+$("#type").val()+"')\n"+
+							"POST('/log/operator/"+ $("#opname").val()+$("#service").val()+"/links/out/notify', '{\"url\":\"/log/integer/"+$("#intname").val()+$("#service").val()+"/value\"}')\n" +
+							"POST('/log/timer/alloc', 'time_button"+$("#service").val()+"')\n"+
+							"POST('/log/timer/time_button"+$("#service").val()+"/notify', '{\"url\":\"/log/operator/"+ $("#opname").val()+$("#service").val()+"/value\"}')\n"+
+							"PUT('/log/timer/time_button/cfg/value', '{\"period\":"+$("#period").val()+"} ')\n"+
+							"PUT('/log/timer/time_button/value', '"+$("#timeStardDelay").val()+"')"
+
+
+						);
+					});
+
+					$("#ustvariLED").on("click", function(){
+						$("#script_output").val(
+							"POST('/phy/gpio/alloc', '" + $("#service").val() + "')\n"+
+							"PUT('/phy/gpio/" + $("#service").val() + "/cfg/value', '{\"dir\":\"out\",\"mode\":\"floating\",\"irq\":\"none\",\"debouncing\":0}')\n"+
+							"POST('/phy/gpio/" + $("#service").val() + "/notify', '{\"url\":\"http://192.168.1.8:8080/bajtahack/notify?device="+$("#device").val()+"&service=" + $("#service").val() + "&type="+$("#type").val()+"\"}')"
+						);
+					});
+
+					$("#init").on("click", function(){
+						$("#script_output").val(
+							"POST('/log/timer/alloc',"+ $("#serverTimer").val()+"')\n"+
+							"PUT('/log/timer/'" + $("#serverTimer").val() + "'/cfg/value', '{\"period\":30000}')"+
+							"POST('/log/timer/'" + $("#serverTimer").val() + "'/notify', '{\"urlq\":\"http://192.168.1.8:8080/bajtahack/install?name=l3.srm.bajtahack.si\"}')\n"+
+							"PUT('/log/timer/'" + $("#serverTimer").val() + "'/value', '1')"
+						);
+					});
+
+			});
+
+
+		</script>
+		<script>
+			//setTimeout(function(){ alert("Hello"); }, 500);
+		</script>
+		<!--<footer id="Footer">
+			...footer test...
+		</footer>-->
+	</body>
+</html>
