@@ -1,0 +1,5 @@
+flask
+pymongo
+requests
+urllib3
+pyA20
