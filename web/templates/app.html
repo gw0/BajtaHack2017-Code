@@ -58,29 +58,6 @@
           });
       });
 
-
-      test_cases = [[{
-        value: true,
-        id: 1,
-        mode: "manual"
-      }],
-      [{
-        value: false,
-        id: 1,
-        mode: "manual"
-      }],
-      [{
-        value: true,
-        id: 1,
-        mode: "auto"
-      }],
-      [{
-        value: false,
-        id: 1,
-        mode: "auto"
-      }],
-    ]
-
     function render(results) {
         for (var i=0; i<results.length; i++) {
             var res = results[i];
@@ -107,8 +84,6 @@
 
     function refresh() {
         $(".active").removeClass();
-
-        // var results = test_cases[[Math.floor(Math.random() * 4)]];
 
         $.ajax({
             url: "/status",

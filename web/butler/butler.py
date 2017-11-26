@@ -1,7 +1,7 @@
 """Module for intelligent monitoring and control of lighting systems."""
 
 import time
-import srmlib_ublox as srmlib  # pylint: disable=import-error
+from web.butler import srmlib_ublox as srmlib  # pylint: disable=import-error
 
 # Lux sensor flags
 VISIBLE = 2  # channel 0 - channel 1
@@ -185,54 +185,54 @@ def get_pir_status():
     return int(PIR.get().content)
 
 
-print("\nWorking...")
-lux_avg = -1  # pylint: disable=invalid-name
-while True:
-    LIGHT_GET = get_light_status()
-    PIR_GET = get_pir_status()
-
-    # Lux (WIP)
-    LUX_ENABLE = ('"' +
-                  hex(COMMAND_BIT | REGISTER_ENABLE)[2:].upper() +
-                  hex(ENABLE_POWERON | ENABLE_AEN | ENABLE_AIEN)[2:].upper() +
-                  '"')
-    CLIENT_SRM.put('/phy/i2c/' + LUX_I2C +
-                   '/slaves/' + LUX_I2C_SLAVE +
-                   '/value', data=LUX_ENABLE)
-
-    LUX_CH0_CONF = ('"' +
-                    hex(COMMAND_BIT | REGISTER_CHAN0_LOW)[2:].upper() +
-                    '"')
-    CLIENT_SRM.put('/phy/i2c/' + LUX_I2C +
-                   '/slaves/' + LUX_I2C_SLAVE +
-                   '/value', data=LUX_CH0_CONF)
-    LUX_GET_FULL = int(LUX.get().content[1:-1][:4], base=16)
-
-    LUX_CH1_CONF = ('"' +
-                    hex(COMMAND_BIT | REGISTER_CHAN1_LOW)[2:].upper() +
-                    '"')
-    CLIENT_SRM.put('/phy/i2c/' + LUX_I2C +
-                   '/slaves/' + LUX_I2C_SLAVE +
-                   '/value', data=LUX_CH1_CONF)
-    LUX_GET_IR = int(LUX.get().content[1:-1][:4], base=16)
-
-    LUX_GET_VISIBLE = LUX_GET_FULL - LUX_GET_IR
-
-    LUX_NUM = LUX_GET_VISIBLE
-    # pylint: disable=invalid-name
-    lux_avg = LUX_NUM if lux_avg == -1 else (LUX_NUM + lux_avg * 10) / 11
-
-    # Print states
-    print("---------------------------------")
-    print("Light state: {}".format(LIGHT_GET))
-    print("  PIR state: {}".format(PIR_GET))
-    print("  lux state: {}".format(LUX_NUM))
-    print("  lux state: {}".format(lux_avg))
-
-    # Is light switch needed
-    MOTION_SWITCH = LIGHT_GET != PIR_GET
-    LUX_SWITCH = False  # TODO
-    if LIGHTING_MODE == "auto" and (MOTION_SWITCH or LUX_SWITCH):
-        switch_light_relay()
-
-    time.sleep(0.3)
+# print("\nWorking...")
+# lux_avg = -1  # pylint: disable=invalid-name
+# while True:
+#     LIGHT_GET = get_light_status()
+#     PIR_GET = get_pir_status()
+#
+#     # Lux (WIP)
+#     LUX_ENABLE = ('"' +
+#                   hex(COMMAND_BIT | REGISTER_ENABLE)[2:].upper() +
+#                   hex(ENABLE_POWERON | ENABLE_AEN | ENABLE_AIEN)[2:].upper() +
+#                   '"')
+#     CLIENT_SRM.put('/phy/i2c/' + LUX_I2C +
+#                    '/slaves/' + LUX_I2C_SLAVE +
+#                    '/value', data=LUX_ENABLE)
+#
+#     LUX_CH0_CONF = ('"' +
+#                     hex(COMMAND_BIT | REGISTER_CHAN0_LOW)[2:].upper() +
+#                     '"')
+#     CLIENT_SRM.put('/phy/i2c/' + LUX_I2C +
+#                    '/slaves/' + LUX_I2C_SLAVE +
+#                    '/value', data=LUX_CH0_CONF)
+#     LUX_GET_FULL = int(LUX.get().content[1:-1][:4], base=16)
+#
+#     LUX_CH1_CONF = ('"' +
+#                     hex(COMMAND_BIT | REGISTER_CHAN1_LOW)[2:].upper() +
+#                     '"')
+#     CLIENT_SRM.put('/phy/i2c/' + LUX_I2C +
+#                    '/slaves/' + LUX_I2C_SLAVE +
+#                    '/value', data=LUX_CH1_CONF)
+#     LUX_GET_IR = int(LUX.get().content[1:-1][:4], base=16)
+#
+#     LUX_GET_VISIBLE = LUX_GET_FULL - LUX_GET_IR
+#
+#     LUX_NUM = LUX_GET_VISIBLE
+#     # pylint: disable=invalid-name
+#     lux_avg = LUX_NUM if lux_avg == -1 else (LUX_NUM + lux_avg * 10) / 11
+#
+#     # Print states
+#     print("---------------------------------")
+#     print("Light state: {}".format(LIGHT_GET))
+#     print("  PIR state: {}".format(PIR_GET))
+#     print("  lux state: {}".format(LUX_NUM))
+#     print("  lux state: {}".format(lux_avg))
+#
+#     # Is light switch needed
+#     MOTION_SWITCH = LIGHT_GET != PIR_GET
+#     LUX_SWITCH = False  # TODO
+#     if LIGHTING_MODE == "auto" and (MOTION_SWITCH or LUX_SWITCH):
+#         switch_light_relay()
+#
+#     time.sleep(0.3)
