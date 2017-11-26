@@ -1,5 +1,7 @@
 """Bajta hack views module."""
 
+import flask
+
 
 def init_views(app):
     """Initialize all views.
@@ -13,4 +15,4 @@ def init_views(app):
     # pylint: disable=unused-variable
     @app.route('/')
     def index():
-        return 'Hello World!'
+        return flask.render_template("app.html")
