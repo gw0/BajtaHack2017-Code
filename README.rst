@@ -2,7 +2,7 @@
 
 .. image:: https://travis-ci.org/Psywerx/BajtaHack.svg?branch=master
   :target: https://travis-ci.org/Psywerx/BajtaHack
-  :alt: Traves CI
+  :alt: Travis CI
 
 .. image:: https://codecov.io/gh/Psywerx/BajtaHack/branch/master/graph/badge.svg
   :target: https://codecov.io/gh/Psywerx/BajtaHack
@@ -38,10 +38,10 @@ Install
 
 .. code:: sh
 
-    virtualenv --python=python3 bajtahack_env
-    bajtahack_env/bin/activate
     git clone git://github.com/psywerx/BajtaHack.git
     cd BajtaHack
+    virtualenv --python=python3 bajtahack_env
+    . bajtahack_env/bin/activate
     pip install -e .[dev,test]
 
 Run tests
@@ -49,4 +49,5 @@ Run tests
 .. code:: sh
 
     python setup.py test
+    pylint web test butler
 

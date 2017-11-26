@@ -12,10 +12,11 @@ if __name__ == '__main__':
     setup(
         name='BajtaHack',
         version='0.0.1',
-        packages=['web'],
+        packages=['web', 'butler'],
         include_package_data=True,
         install_requires=[
             'flask',
+            'requests==2.13.0',
         ],
         extras_require={
             'dev': [
