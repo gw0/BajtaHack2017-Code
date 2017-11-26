@@ -2,8 +2,8 @@
 Where motion meets magic
 
 ## Details
-All details are written in BajtaHack.pdf
-PowerPoint: https://docs.google.com/presentation/d/1GggYLLUCnYQc6Luc9xE9zYhlv_J5vmB9gpiYS1qn5bg/edit?usp=sharing
+ - All details are written in BajtaHack.pdf
+ - PowerPoint: https://docs.google.com/presentation/d/1GggYLLUCnYQc6Luc9xE9zYhlv_J5vmB9gpiYS1qn5bg/edit?usp=sharing
 
 ## Setup
 ### Needed:
