@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>Embed Demo</title>
+    {{ js_resources|indent(4)|safe }}
+    {{ css_resources|indent(4)|safe }}
+    {{ plot_script|indent(4)|safe }}
+  </head>
+
+
+<body>
+
+
+    <div style="width: 33%; display: inline-block;">
+
+        {{ plot_div | safe }}
+        {{ plot_script | safe }}
+
+    </div>
+
+    <div style="width: 33%; display: inline-block;">
+
+        {{ plot_div2 | safe }}
+        {{ plot_script2 | safe }}
+
+
+    </div>
+
+        <div style="width: 33%; display: inline-block;">
+
+        {{ plot_div3 | safe }}
+        {{ plot_script3 | safe }}
+
+
+    </div>
+
+
+        <div style="width: 100%; display: inline-block;">
+
+        {{ plot_div4 | safe }}
+        {{ plot_script4 | safe }}
+
+
+    </div>
+
+        <div style="width: 100%; display: inline-block;">
+
+        {{ plot_div5 | safe }}
+        {{ plot_script5 | safe }}
+
+
+    </div>
+
+
+</body>
+</html>

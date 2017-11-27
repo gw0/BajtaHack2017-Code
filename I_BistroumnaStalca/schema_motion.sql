@@ -1,0 +1,7 @@
+--drop table if exists motion;
+--create table motion (
+--  cowID not null,
+--  milk null,
+--  food null,
+--  Timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
+--);
