@@ -1,0 +1,15 @@
+language: python
+
+python:
+    - "3.6"
+
+install:
+    - pip install -U pip
+    - pip install .[test,dev]
+
+script: 
+    - python setup.py test
+    - pylint web test
+
+after_success:
+    - codecov

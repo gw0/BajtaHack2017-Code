@@ -1,0 +1,21 @@
+# Editor files
+.*.swp
+.*.swo
+.idea
+
+# python cache files
+__pycache__
+*.pyc
+.cache
+.ropeproject
+dist
+
+# Python code coverage report file
+.coverage
+
+# generated egg folders
+BajtaHack.egg-info
+.eggs
+
+#env
+bajtahack_env
