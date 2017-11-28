@@ -1,0 +1,48 @@
+/** p1 */
+POST('/phy/i2c/alloc', '1')
+POST('/phy/i2c/1/slaves/alloc', '41')
+PUT('/phy/i2c/1/slaves/41/datasize/value', '4')
+
+/* Enable power */
+PUT('/phy/i2c/1/slaves/41/value', '"A003"')
+/* Configuration register */
+PUT('/phy/i2c/1/slaves/41/value', '"A111"')
+/* Channel 0 (lux) */
+PUT('/phy/i2c/1/slaves/41/value', '"B4"')
+GET('/phy/i2c/1/slaves/41/value')
+
+/* temperature sensor */
+POST('/phy/i2c/1/slaves/alloc', '64')
+PUT('/phy/i2c/1/slaves/64/datasize/value', '2')
+
+/* RST_res_HEAT_MODE_BTST_TRES_HRES2_res8 */
+PUT('/phy/i2c/1/slaves/64/value', '"020000"')
+/* configuration_register */
+PUT('/phy/i2c/1/slaves/64/value', '"02"')
+GET('/phy/i2c/1/slaves/64/value')
+/* serial1_register */
+PUT('/phy/i2c/1/slaves/64/value', '"FB"')
+GET('/phy/i2c/1/slaves/64/value')
+/* serial2_register */
+PUT('/phy/i2c/1/slaves/64/value', '"FC"')
+GET('/phy/i2c/1/slaves/64/value')
+/* serial3_register */
+PUT('/phy/i2c/1/slaves/64/value', '"FD"')
+GET('/phy/i2c/1/slaves/64/value')
+/* manufacturer register */
+PUT('/phy/i2c/1/slaves/64/value', '"FE"')
+GET('/phy/i2c/1/slaves/64/value')
+/* device_id_register */
+PUT('/phy/i2c/1/slaves/64/value', '"FE"')
+GET('/phy/i2c/1/slaves/64/value')
+
+
+/** p2 **/
+POST('https://p2.srm.bajtahack.si:44200/phy/gpio/alloc', '24') 
+POST('https://p2.srm.bajtahack.si:44200/phy/gpio/alloc', '25') 
+POST('https://p2.srm.bajtahack.si:44200/phy/gpio/alloc', '16') 
+
+PUT('https://p2.srm.bajtahack.si:44200/phy/gpio/24/cfg/value', '{"dir":"out","mode":"floating","irq":"none","debouncing":0}') 
+PUT('https://p2.srm.bajtahack.si:44200/phy/gpio/25/cfg/value', '{"dir":"out","mode":"floating","irq":"none","debouncing":0}') 
+PUT('https://p2.srm.bajtahack.si:44200/phy/gpio/16/cfg/value', '{"dir":"out","mode":"floating","irq":"none","debouncing":0}') 
+
