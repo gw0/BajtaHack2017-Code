@@ -42,8 +42,9 @@ $ flask/bin/pip install coverage
 ### Initialising example database
 
 We added 2 sample database builds.
-⋅⋅* `initdb.py`
-⋅⋅* `subelbase.py`
+* `initdb.py`
+* `subelbase.py`
+
 Note that only `subelbase.py` creates fully suportet database that supports pictures of products
 
 The script will create local database file in your tmp folder
