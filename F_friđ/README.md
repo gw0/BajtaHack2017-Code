@@ -1,5 +1,7 @@
 # FRIĐ
 
+## Installing FriĐ app
+
 Installing friđ app localy
 
 ### Install python3
@@ -37,6 +39,49 @@ $ flask/bin/pip install coverage
 ```
 
 
+### Initialising example database
 
+We added 2 sample database builds.
+⋅⋅* `initdb.py`
+⋅⋅* `subelbase.py`
+Note that only `subelbase.py` creates fully suportet database that supports pictures of products
+
+The script will create local database file in your tmp folder
+
+Welll done you are almost there
+
+### Runing app localy
+
+You are all set and only need to run your aplication.
+
+You can do that by running `run.py` file. You can do so by cd int folder that has `run.py` file in it and calling
+
+```python ./run.py```
+
+or
+
+```python3 ./run.py```
+
+If your default python is python2.
+
+Note that tis installation is for non windows users. You may need to take a few different steps if you are using windows. And if you do you should know how to do so.
+
+### Opening your app in your prefered browser (tested on chrome)
+
+You just open 
+
+```http://localhost:5000```
+
+or some other port. You can read the port number in terminal just after you run your app.
+
+## Preparing Hardware
+
+To Do
+
+## Final thoughts
+
+Enjoy using our app and help reduce food waste. 
+
+Feedback is welcome.
 
 
