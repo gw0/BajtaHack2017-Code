@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="srm.srmexample01.MainActivity">
+
+    <LinearLayout
+        android:id="@+id/layout_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Setup component -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/border_margin"
+            android:background="@drawable/border_1dp"
+            android:orientation="vertical"
+            android:padding="@dimen/border_padding">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/ic_setup"
+                    android:layout_width="@dimen/title_icon_width"
+                    android:layout_height="wrap_content"
+                    android:tint="@color/setup_color"
+                    app:srcCompat="@drawable/ic_home_black_24dp" />
+
+                <TextView
+                    android:id="@+id/tv_setup_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/title_margin"
+                    android:layout_marginStart="@dimen/title_margin"
+                    android:layout_toEndOf="@+id/ic_setup"
+                    android:layout_toRightOf="@+id/ic_setup"
+                    android:text="@string/setup_title"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                    android:textColor="@color/setup_color" />
+            </RelativeLayout>
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:columnCount="2">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:text="@string/setup_url" />
+
+                <EditText
+                    android:id="@+id/et_setup_url"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:inputType="textUri"
+                    android:text="@string/setup_url_default"
+                    android:textSize="@dimen/edit_size" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:text="@string/setup_username" />
+
+                <EditText
+                    android:id="@+id/et_setup_username"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:inputType="text"
+                    android:text=""
+                    android:textSize="@dimen/edit_size" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:text="@string/setup_password" />
+
+                <EditText
+                    android:id="@+id/et_setup_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:inputType="textPassword"
+                    android:text=""
+                    android:textSize="@dimen/edit_size" />
+
+                <!-- LED setup -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:text="@string/led_gpio" />
+
+                <EditText
+                    android:id="@+id/et_led_gpio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:inputType="number"
+                    android:text="@string/led_gpio_default"
+                    android:textSize="@dimen/edit_size" />
+
+                <!-- Button setup -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:text="@string/button_gpio" />
+
+                <EditText
+                    android:id="@+id/et_button_gpio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:inputType="number"
+                    android:text="1"
+                    android:textSize="@dimen/edit_size" />
+                <!--android:text="@string/button_gpio_default"-->
+                <!-- Buzzer setup -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:text="@string/buzzer_pwm" />
+
+                <EditText
+                    android:id="@+id/et_buzzer_pwm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:inputType="number"
+                    android:text="1"
+                    android:textSize="@dimen/edit_size" />
+                <!--android:text="@string/buzzer_pwm_default"-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:text="@string/buzzer_period" />
+
+                <EditText
+                    android:id="@+id/et_buzzer_period"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:inputType="number"
+                    android:text="@string/buzzer_period_default"
+                    android:textSize="@dimen/edit_size" />
+            </GridLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_setup_init"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/setup_init"
+                    app:layout_constraintRight_toLeftOf="@+id/btn_setup_reboot"
+                    android:layout_marginRight="@dimen/inner_margin"
+                    android:layout_marginEnd="@dimen/inner_margin" />
+
+                <Button
+                    android:id="@+id/btn_setup_reboot"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/setup_reboot"
+                    app:layout_constraintRight_toRightOf="parent" />
+            </android.support.constraint.ConstraintLayout>
+        </LinearLayout>
+
+        <!-- LED component -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/border_margin"
+            android:background="@drawable/border_1dp"
+            android:orientation="vertical"
+            android:padding="@dimen/border_padding">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/ic_led"
+                    android:layout_width="@dimen/title_icon_width"
+                    android:layout_height="wrap_content"
+                    android:tint="@color/led_color"
+                    app:srcCompat="@drawable/ic_lightbulb_outline_black_24dp" />
+
+                <TextView
+                    android:id="@+id/tv_led_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/title_margin"
+                    android:layout_marginStart="@dimen/title_margin"
+                    android:layout_toEndOf="@+id/ic_led"
+                    android:layout_toRightOf="@+id/ic_led"
+                    android:text="@string/led_title"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                    android:textColor="@color/led_color" />
+            </RelativeLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_led_state_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/state"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_led_state"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/inner_margin"
+                    android:layout_marginStart="@dimen/inner_margin"
+                    android:text="@string/state_unknown"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="@dimen/state_size"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toRightOf="@+id/tv_led_state_label"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/btn_led_on"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/led_on"
+                    app:layout_constraintRight_toLeftOf="@+id/btn_led_off"
+                    android:layout_marginRight="@dimen/inner_margin"
+                    android:layout_marginEnd="@dimen/inner_margin" />
+
+                <Button
+                    android:id="@+id/btn_led_off"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/led_off"
+                    app:layout_constraintRight_toRightOf="parent" />
+            </android.support.constraint.ConstraintLayout>
+        </LinearLayout>
+
+        <!-- Button component -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/border_margin"
+            android:background="@drawable/border_1dp"
+            android:orientation="vertical"
+            android:padding="@dimen/border_padding">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/ic_button"
+                    android:layout_width="@dimen/title_icon_width"
+                    android:layout_height="wrap_content"
+                    android:tint="@color/button_color"
+                    app:srcCompat="@drawable/ic_radio_button_checked_black_24dp" />
+
+                <TextView
+                    android:id="@+id/tv_button_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/title_margin"
+                    android:layout_marginStart="@dimen/title_margin"
+                    android:layout_toEndOf="@+id/ic_button"
+                    android:layout_toRightOf="@+id/ic_button"
+                    android:text="@string/button_title"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                    android:textColor="@color/button_color" />
+            </RelativeLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_button_state_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/state"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_button_state"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/inner_margin"
+                    android:layout_marginStart="@dimen/inner_margin"
+                    android:text="@string/state_unknown"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="@dimen/state_size"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toRightOf="@+id/tv_button_state_label"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/btn_button_refresh"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/button_refresh"
+                    app:layout_constraintRight_toRightOf="parent" />
+            </android.support.constraint.ConstraintLayout>
+        </LinearLayout>
+
+        <!-- Buzzer component -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/border_margin"
+            android:background="@drawable/border_1dp"
+            android:orientation="vertical"
+            android:padding="@dimen/border_padding">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/ic_buzzer"
+                    android:layout_width="@dimen/title_icon_width"
+                    android:layout_height="wrap_content"
+                    android:tint="@color/buzzer_color"
+                    app:srcCompat="@drawable/ic_notifications_black_24dp" />
+
+                <ImageView
+                    android:id="@+id/srm_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/fri_logo" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>
