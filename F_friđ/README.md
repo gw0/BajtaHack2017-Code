@@ -7,6 +7,7 @@ Installing friđ app localy
 ### Install python3
 
 You probably know how to install python and add it as system enviroment variable, so we are gonna skip this part.
+[How to install python](https://www.python.org/downloads/)
 
 ### Fork this repo
 
