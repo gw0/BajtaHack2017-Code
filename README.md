@@ -19,3 +19,4 @@ License
 Copyright &copy; 2017 *BajtaHack Team* &lt;<bajtahack@data-lab.si>&gt; and participants of the hackathon
 
 All source code in this repository is licensed under the [GNU Affero General Public License 3.0+](LICENSE_AGPL-3.0.txt) (AGPL-3.0+). Note that it is mandatory to make all modifications and complete source code of any code publicly available to any user.
+
