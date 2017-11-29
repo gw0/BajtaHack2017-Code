@@ -1,0 +1,83 @@
+<html>
+    <head>
+        <!-- META -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>FRIĐ</title>
+        
+        <!-- STYLES -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+        
+
+        <!-- FONTS -->
+        <link href='https://fonts.googleapis.com/css?family=Roboto:400,500' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+        <!-- JS resursi -->
+        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js" integrity="sha256-GcknncGKzlKm69d+sp+k3A2NyQE+jnu43aBl6rrDN2I=" crossorigin="anonymous"></script>
+
+        <link rel="stylesheet" type="text/css" href="static/css/style.css">
+
+    </head>
+    
+    <body>
+
+        <nav>
+            <a href="">
+                <img src="static/img/logo.png" class="logo">
+            </a>
+
+            <ul class="meni">
+                <li> <a href="../"> domov </a> </li>
+                <li> <a href="seznam"> seznam </a> </li>
+                <li> <a href="recepti"> recepti </a> </li>
+                <li> <a href="seznam"> meritve </a> </li>
+                <li> <a href="nastavitve"> nastavitve </a> </li>
+            </ul> 
+
+            <img class="meni_res_btn" id="resGumb" src="static/img/meni.png">        
+
+            
+
+        </nav>
+
+        <div class="main">
+
+            <div class="meni_res" id="meni_res">
+                <ul>
+                    <li> <a href="../"> domov </a> </li>
+                    <li> <a href="seznam"> seznam </a> </li>
+                    <li> <a href="recepti"> recepti </a> </li>
+                    <li> <a href="seznam"> meritve </a> </li>
+                    <li> <a href="nastavitve"> nastavitve </a> </li>
+                </ul> 
+            </div>
+
+            <table>
+                <tr>
+                    <td><i class="fa fa-list" aria-hidden="true"></i><p>Seznam</p></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+
+            </table>
+
+
+            
+        </div>
+
+
+        <script type="text/javascript">
+            
+            $("#resGumb").click( function(){
+                $("#meni_res").toggle();
+            });
+
+        </script>
